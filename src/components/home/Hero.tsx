@@ -344,54 +344,62 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Academic Profiles & Contact Links */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
+            <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-mono">
               <a
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-blue-400 transition-colors"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/80 border border-lab-border text-slate-300 hover:text-blue-400 hover:border-blue-500/40 transition-all"
               >
                 <LinkedinIcon className="w-3.5 h-3.5 text-blue-400" />
                 <span>LinkedIn</span>
               </a>
-              <span className="text-slate-700">•</span>
               <a
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/80 border border-lab-border text-slate-300 hover:text-white hover:border-slate-500 transition-all"
               >
                 <GithubIcon className="w-3.5 h-3.5 text-slate-300" />
                 <span>GitHub</span>
               </a>
-              <span className="text-slate-700">•</span>
               {profile.googleScholar ? (
                 <a
                   href={profile.googleScholar}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 hover:text-blue-400 transition-colors"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-950/40 border border-indigo-500/30 text-indigo-300 hover:text-indigo-200 hover:border-indigo-400 transition-all"
                 >
                   <GraduationCap className="w-3.5 h-3.5 text-indigo-400" />
                   <span>Google Scholar</span>
                 </a>
               ) : (
                 <span
-                  className="inline-flex items-center gap-1.5 text-slate-500"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900/50 border border-lab-border text-slate-500"
                   title="Google Scholar URL can be configured in CMS"
                 >
                   <GraduationCap className="w-3.5 h-3.5 text-slate-500" />
-                  <span>Google Scholar (Configurable)</span>
+                  <span>Google Scholar</span>
                 </span>
               )}
-              <span className="text-slate-700">•</span>
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-1.5 hover:text-emerald-400 transition-colors"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 hover:text-emerald-200 hover:border-emerald-400 transition-all"
+                title="Primary Email"
               >
                 <Mail className="w-3.5 h-3.5 text-emerald-400" />
                 <span>{profile.email}</span>
               </a>
+              {profile.secondaryEmail && (
+                <a
+                  href={`mailto:${profile.secondaryEmail}`}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-950/40 border border-blue-500/30 text-blue-300 hover:text-blue-200 hover:border-blue-400 transition-all"
+                  title="Institutional Email (AI Centre)"
+                >
+                  <Mail className="w-3.5 h-3.5 text-blue-400" />
+                  <span>{profile.secondaryEmail}</span>
+                </a>
+              )}
             </div>
           </div>
 

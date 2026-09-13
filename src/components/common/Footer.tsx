@@ -127,11 +127,22 @@ export const Footer: React.FC = () => {
               )}
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-blue-400 transition-colors"
+                className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-emerald-400 transition-colors"
+                title="Primary Email"
               >
-                <Mail className="w-3.5 h-3.5 text-slate-400" />
+                <Mail className="w-3.5 h-3.5 text-emerald-400" />
                 <span>{profile.email}</span>
               </a>
+              {profile.secondaryEmail && (
+                <a
+                  href={`mailto:${profile.secondaryEmail}`}
+                  className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-blue-400 transition-colors"
+                  title="Institutional Email (AI Centre)"
+                >
+                  <Mail className="w-3.5 h-3.5 text-blue-400" />
+                  <span>{profile.secondaryEmail}</span>
+                </a>
+              )}
             </div>
           </div>
         </div>

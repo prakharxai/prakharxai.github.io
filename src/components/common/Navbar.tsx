@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { contentService } from '../../services/contentService';
-import { Menu, X, Sparkles, Sliders } from 'lucide-react';
+import { Menu, X, Sparkles, Sliders, GraduationCap } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './BrandIcons';
 
 interface NavbarProps {
@@ -107,6 +107,18 @@ export const Navbar: React.FC<NavbarProps> = () => {
             >
               <LinkedinIcon className="w-4 h-4" />
             </a>
+            {profile.googleScholar && (
+              <a
+                href={profile.googleScholar}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg text-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60 border border-transparent hover:border-indigo-500/30 transition-all"
+                title="Google Scholar Profile"
+                aria-label="Google Scholar Profile"
+              >
+                <GraduationCap className="w-4 h-4" />
+              </a>
+            )}
             <a
               href="#/admin"
               className="p-2 rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800/60 border border-transparent hover:border-lab-border transition-all"
@@ -179,6 +191,17 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 >
                   <LinkedinIcon className="w-4 h-4" />
                 </a>
+                {profile.googleScholar && (
+                  <a
+                    href={profile.googleScholar}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg text-indigo-400 hover:text-indigo-300 bg-slate-800/50"
+                    aria-label="Google Scholar"
+                  >
+                    <GraduationCap className="w-4 h-4" />
+                  </a>
+                )}
               </div>
               <a
                 href="#contact"

@@ -1023,7 +1023,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-slate-400 mb-1">Email:</label>
+                  <label className="block text-slate-400 mb-1">Primary Email:</label>
                   <input
                     type="email"
                     value={state.profile.email}
@@ -1034,12 +1034,38 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                   />
                 </div>
                 <div>
+                  <label className="block text-slate-400 mb-1">Institutional / Secondary Email:</label>
+                  <input
+                    type="email"
+                    value={state.profile.secondaryEmail || ''}
+                    onChange={(e) =>
+                      setState({ ...state, profile: { ...state.profile, secondaryEmail: e.target.value } })
+                    }
+                    placeholder="e.g. prakhar.joshi@aicentre.org"
+                    className="w-full p-2 rounded-lg bg-slate-950 border border-lab-border text-white"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
                   <label className="block text-slate-400 mb-1">Location:</label>
                   <input
                     type="text"
                     value={state.profile.location}
                     onChange={(e) =>
                       setState({ ...state, profile: { ...state.profile, location: e.target.value } })
+                    }
+                    className="w-full p-2 rounded-lg bg-slate-950 border border-lab-border text-white"
+                  />
+                </div>
+                <div>
+                  <label className="block text-slate-400 mb-1">Phone:</label>
+                  <input
+                    type="text"
+                    value={state.profile.phone || ''}
+                    onChange={(e) =>
+                      setState({ ...state, profile: { ...state.profile, phone: e.target.value } })
                     }
                     className="w-full p-2 rounded-lg bg-slate-950 border border-lab-border text-white"
                   />

@@ -6,6 +6,7 @@ export interface Profile {
   shortBio: string;
   fullBio: string;
   email: string;
+  secondaryEmail?: string;
   phone?: string;
   location: string;
   linkedin: string;
