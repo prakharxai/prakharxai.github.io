@@ -6,7 +6,7 @@ export const ResearchAtAGlance: React.FC = () => {
     <section className="relative py-16 bg-lab-bg border-y border-lab-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-2">
+          <h2 className="text-xs font-mono uppercase tracking-widest text-blue-400 mb-2">
             RESEARCH OVERVIEW
           </h2>
           <p className="text-2xl sm:text-3xl font-display font-bold text-white">
@@ -39,11 +39,11 @@ export const ResearchAtAGlance: React.FC = () => {
           </div>
 
           {/* Card 2: COLING 2025 Publication */}
-          <div className="p-6 rounded-xl bg-slate-900/60 border border-cyan-500/30 relative overflow-hidden group hover:border-cyan-400/60 transition-all">
+          <div className="p-6 rounded-xl bg-slate-900/60 border border-blue-500/30 relative overflow-hidden group hover:border-blue-400/60 transition-all">
             <div className="absolute top-0 right-0 p-3 opacity-15 group-hover:opacity-25 transition-opacity">
-              <BookOpen className="w-16 h-16 text-cyan-400" />
+              <BookOpen className="w-16 h-16 text-blue-400" />
             </div>
-            <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-semibold mb-3">
+            <div className="flex items-center gap-2 text-blue-400 font-mono text-xs font-semibold mb-3">
               <BookOpen className="w-4 h-4" />
               <span>PEER-REVIEWED</span>
             </div>
@@ -59,11 +59,11 @@ export const ResearchAtAGlance: React.FC = () => {
           </div>
 
           {/* Card 3: Healthcare AI Deployment */}
-          <div className="p-6 rounded-xl bg-slate-900/60 border border-teal-500/30 relative overflow-hidden group hover:border-teal-400/60 transition-all">
+          <div className="p-6 rounded-xl bg-slate-900/60 border border-sky-500/30 relative overflow-hidden group hover:border-sky-400/60 transition-all">
             <div className="absolute top-0 right-0 p-3 opacity-15 group-hover:opacity-25 transition-opacity">
-              <Hospital className="w-16 h-16 text-teal-400" />
+              <Hospital className="w-16 h-16 text-sky-400" />
             </div>
-            <div className="flex items-center gap-2 text-teal-400 font-mono text-xs font-semibold mb-3">
+            <div className="flex items-center gap-2 text-sky-400 font-mono text-xs font-semibold mb-3">
               <Hospital className="w-4 h-4" />
               <span>CLINICAL DEPLOYMENT</span>
             </div>
@@ -79,11 +79,11 @@ export const ResearchAtAGlance: React.FC = () => {
           </div>
 
           {/* Card 4: Grounded Citation RAG */}
-          <div className="p-6 rounded-xl bg-slate-900/60 border border-violet-500/30 relative overflow-hidden group hover:border-violet-400/60 transition-all">
+          <div className="p-6 rounded-xl bg-slate-900/60 border border-indigo-500/30 relative overflow-hidden group hover:border-indigo-400/60 transition-all">
             <div className="absolute top-0 right-0 p-3 opacity-15 group-hover:opacity-25 transition-opacity">
-              <ShieldCheck className="w-16 h-16 text-violet-400" />
+              <ShieldCheck className="w-16 h-16 text-indigo-400" />
             </div>
-            <div className="flex items-center gap-2 text-violet-400 font-mono text-xs font-semibold mb-3">
+            <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs font-semibold mb-3">
               <ShieldCheck className="w-4 h-4" />
               <span>TRACEABLE AI</span>
             </div>
@@ -102,7 +102,7 @@ export const ResearchAtAGlance: React.FC = () => {
         {/* Highlighted Research Pillars Bar */}
         <div className="mt-8 p-4 rounded-xl bg-slate-900/40 border border-lab-border flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-400">
           <div className="flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-cyan-400" />
+            <Cpu className="w-4 h-4 text-blue-400" />
             <span className="text-slate-200 font-medium">Core Research Pillars:</span>
           </div>
           <div className="flex flex-wrap gap-2 sm:gap-4">

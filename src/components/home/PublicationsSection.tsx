@@ -96,7 +96,7 @@ export const PublicationsSection: React.FC = () => {
                   <span>ICITSIF 2026, IEEE (Precision Agriculture Logistics)</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                   <span>Digital Governance (Seed Information Supply Chain)</span>
                 </li>
               </ul>
@@ -107,21 +107,21 @@ export const PublicationsSection: React.FC = () => {
               onClick={() => setSelectedYear('2025')}
               className={`p-5 rounded-xl border transition-all cursor-pointer ${
                 selectedYear === '2025' || selectedYear === 'All'
-                  ? 'bg-cyan-950/30 border-cyan-500/50'
+                  ? 'bg-blue-950/30 border-blue-500/50'
                   : 'bg-slate-950/40 border-lab-border opacity-50'
               }`}
             >
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xl font-display font-extrabold text-cyan-400">2025</span>
+                <span className="text-xl font-display font-extrabold text-blue-400">2025</span>
                 <span className="text-xs font-mono text-slate-400">2 Publications</span>
               </div>
               <ul className="space-y-2 text-xs text-slate-300">
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                   <span>COLING 2025 (Machine-Generated Text Detection)</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
                   <span>AIHW 2025 (Explainable AI for Depression Detection)</span>
                 </li>
               </ul>
@@ -229,7 +229,7 @@ export const PublicationsSection: React.FC = () => {
                       href={pub.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-cyan-400 hover:underline flex items-center gap-1"
+                      className="text-blue-400 hover:underline flex items-center gap-1"
                     >
                       <span>PDF</span>
                       <ExternalLink className="w-3 h-3" />

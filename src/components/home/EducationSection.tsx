@@ -10,7 +10,7 @@ export const EducationSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-300 text-xs font-mono mb-2">
               <GraduationCap className="w-3.5 h-3.5" />
               <span>ACADEMIC FOUNDATION</span>
             </div>
@@ -27,20 +27,20 @@ export const EducationSection: React.FC = () => {
           {educationList.map((edu) => (
             <div
               key={edu.id}
-              className="p-7 rounded-2xl bg-slate-900/70 border border-lab-border hover:border-cyan-500/40 transition-all flex flex-col justify-between group shadow-md"
+              className="p-7 rounded-2xl bg-slate-900/70 border border-lab-border hover:border-blue-500/40 transition-all flex flex-col justify-between group shadow-md"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center border border-slate-700/60 group-hover:border-cyan-500/40 transition-colors text-cyan-400">
+                  <div className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center border border-slate-700/60 group-hover:border-blue-500/40 transition-colors text-blue-400">
                     <GraduationCap className="w-5 h-5" />
                   </div>
-                  <span className="px-2.5 py-0.5 rounded text-xs font-mono bg-slate-800 text-cyan-300 border border-slate-700/60 flex items-center gap-1">
+                  <span className="px-2.5 py-0.5 rounded text-xs font-mono bg-slate-800 text-blue-300 border border-slate-700/60 flex items-center gap-1">
                     <Calendar className="w-3 h-3" />
                     {edu.startYear} – {edu.endYear}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-display font-bold text-white group-hover:text-cyan-300 transition-colors mb-1.5">
+                <h3 className="text-lg font-display font-bold text-white group-hover:text-blue-300 transition-colors mb-1.5">
                   {edu.degree}
                 </h3>
 
@@ -56,7 +56,7 @@ export const EducationSection: React.FC = () => {
                 {edu.coursework && edu.coursework.length > 0 && (
                   <div className="pt-4 border-t border-lab-border/60">
                     <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <BookCheck className="w-3.5 h-3.5 text-cyan-400" />
+                      <BookCheck className="w-3.5 h-3.5 text-blue-400" />
                       <span>Relevant Coursework:</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">

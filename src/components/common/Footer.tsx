@@ -24,14 +24,18 @@ export const Footer: React.FC = () => {
           {/* Brand & Persona */}
           <div className="md:col-span-6 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-display font-bold text-sm">
-                PJ
+              <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-indigo-500/40 shadow-sm shadow-indigo-500/20 shrink-0">
+                <img
+                  src="assets/prakhar-joshi.jpg"
+                  alt={profile.name}
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <h2 className="text-lg font-display font-bold text-white tracking-tight">
                 {profile.name}
               </h2>
             </div>
-            <p className="text-sm font-medium text-cyan-400">
+            <p className="text-sm font-medium text-blue-400">
               {profile.title}
             </p>
             <p className="text-xs font-mono text-slate-400 tracking-wide">
@@ -49,32 +53,32 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <a href="#research-domains" className="hover:text-cyan-400 transition-colors">
+                <a href="#research-domains" className="hover:text-blue-400 transition-colors">
                   Research Domains
                 </a>
               </li>
               <li>
-                <a href="#research-pipeline" className="hover:text-cyan-400 transition-colors">
+                <a href="#research-pipeline" className="hover:text-blue-400 transition-colors">
                   Research Pipeline
                 </a>
               </li>
               <li>
-                <a href="#projects" className="hover:text-cyan-400 transition-colors">
+                <a href="#projects" className="hover:text-blue-400 transition-colors">
                   Featured Projects
                 </a>
               </li>
               <li>
-                <a href="#publications" className="hover:text-cyan-400 transition-colors">
+                <a href="#publications" className="hover:text-blue-400 transition-colors">
                   Publications &amp; Timeline
                 </a>
               </li>
               <li>
-                <a href="#experience" className="hover:text-cyan-400 transition-colors">
+                <a href="#experience" className="hover:text-blue-400 transition-colors">
                   Academic Experience
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-cyan-400 transition-colors">
+                <a href="#about" className="hover:text-blue-400 transition-colors">
                   Research Profile
                 </a>
               </li>
@@ -100,7 +104,7 @@ export const Footer: React.FC = () => {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-400 transition-colors"
+                className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-blue-400 transition-colors"
               >
                 <LinkedinIcon className="w-3.5 h-3.5 text-slate-400" />
                 <span>LinkedIn</span>
@@ -110,7 +114,7 @@ export const Footer: React.FC = () => {
                   href={profile.googleScholar}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-400 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-blue-400 transition-colors"
                 >
                   <GraduationCap className="w-3.5 h-3.5 text-slate-400" />
                   <span>Google Scholar Profile</span>
@@ -123,7 +127,7 @@ export const Footer: React.FC = () => {
               )}
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-400 transition-colors"
+                className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-blue-400 transition-colors"
               >
                 <Mail className="w-3.5 h-3.5 text-slate-400" />
                 <span>{profile.email}</span>
@@ -143,7 +147,7 @@ export const Footer: React.FC = () => {
             </span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-slate-900 border border-lab-border text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-all flex items-center gap-1.5"
+              className="p-2 rounded-lg bg-slate-900 border border-lab-border text-slate-400 hover:text-blue-400 hover:border-blue-500/40 transition-all flex items-center gap-1.5"
               title="Back to Top"
               aria-label="Back to Top"
             >

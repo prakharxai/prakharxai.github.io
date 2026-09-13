@@ -67,7 +67,7 @@ export const App: React.FC = () => {
 
   // Route 3: Main Academic Portfolio Home
   return (
-    <div className="min-h-screen flex flex-col bg-lab-bg text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen flex flex-col bg-lab-bg text-slate-100 selection:bg-blue-600/30 selection:text-blue-200">
       <Navbar />
       <HomePage />
       <Footer />

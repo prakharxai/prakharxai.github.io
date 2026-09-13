@@ -41,6 +41,7 @@ export interface Project {
   gallery?: string[];
   githubUrl?: string;
   publicationUrl?: string;
+  liveUrl?: string;
   relatedPublicationId?: string;
   tags: string[];
   order: number;

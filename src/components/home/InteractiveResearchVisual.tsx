@@ -54,8 +54,8 @@ export const InteractiveResearchVisual: React.FC = () => {
     <section id="interactive-network" className="relative py-20 bg-lab-bg-secondary border-b border-lab-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-3">
-            <Network className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/70 border border-blue-500/30 text-blue-300 text-xs font-mono mb-3">
+            <Network className="w-3.5 h-3.5 text-blue-400" />
             <span>SIGNATURE INTERACTIVE VISUALIZATION</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
@@ -73,8 +73,8 @@ export const InteractiveResearchVisual: React.FC = () => {
               <svg viewBox="0 0 500 500" className="w-full h-full select-none">
                 <defs>
                   <radialGradient id="hubGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.9" />
-                    <stop offset="100%" stop-color="#0e7490" stop-opacity="0.3" />
+                    <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.9" />
+                    <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.3" />
                   </radialGradient>
                   <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                     <feGaussianBlur stdDeviation="4" result="blur" />
@@ -100,13 +100,13 @@ export const InteractiveResearchVisual: React.FC = () => {
                         y1={center.y}
                         x2={x}
                         y2={y}
-                        stroke={isSelected ? '#06b6d4' : '#334155'}
+                        stroke={isSelected ? '#3b82f6' : '#334155'}
                         strokeWidth={isSelected ? '2.5' : '1.2'}
                         strokeDasharray={isSelected ? 'none' : '3 3'}
                         className="transition-all duration-300"
                       />
                       {isSelected && (
-                        <circle cx={(center.x + x) / 2} cy={(center.y + y) / 2} r="3" fill="#22d3ee" filter="url(#glow)">
+                        <circle cx={(center.x + x) / 2} cy={(center.y + y) / 2} r="3" fill="#60a5fa" filter="url(#glow)">
                           <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
                         </circle>
                       )}
@@ -116,14 +116,14 @@ export const InteractiveResearchVisual: React.FC = () => {
 
                 {/* Central Hub Node: PRAKHAR JOSHI */}
                 <g className="cursor-pointer" onClick={() => setSelectedDomainId(domains[0].id)}>
-                  <circle cx={center.x} cy={center.y} r="48" fill="#0b1320" stroke="#06b6d4" strokeWidth="2.5" />
-                  <circle cx={center.x} cy={center.y} r="56" stroke="#22d3ee" strokeWidth="1" strokeDasharray="4 4" opacity="0.5">
+                  <circle cx={center.x} cy={center.y} r="48" fill="#0b1320" stroke="#3b82f6" strokeWidth="2.5" />
+                  <circle cx={center.x} cy={center.y} r="56" stroke="#60a5fa" strokeWidth="1" strokeDasharray="4 4" opacity="0.5">
                     <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="20s" repeatCount="indefinite" />
                   </circle>
                   <text x={center.x} y={center.y - 6} textAnchor="middle" fill="#ffffff" fontFamily="sans-serif" fontSize="11" fontWeight="bold" letterSpacing="0.05em">
                     PRAKHAR
                   </text>
-                  <text x={center.x} y={center.y + 10} textAnchor="middle" fill="#38bdf8" fontFamily="sans-serif" fontSize="10" fontWeight="bold">
+                  <text x={center.x} y={center.y + 10} textAnchor="middle" fill="#60a5fa" fontFamily="sans-serif" fontSize="10" fontWeight="bold">
                     JOSHI
                   </text>
                   <text x={center.x} y={center.y + 24} textAnchor="middle" fill="#94a3b8" fontFamily="monospace" fontSize="8">
@@ -146,7 +146,7 @@ export const InteractiveResearchVisual: React.FC = () => {
                     >
                       {/* Outer pulse when selected */}
                       {isSelected && (
-                        <circle cx={x} cy={y} r="28" fill="#06b6d4" opacity="0.2">
+                        <circle cx={x} cy={y} r="28" fill="#3b82f6" opacity="0.2">
                           <animate attributeName="r" values="24;32;24" dur="2s" repeatCount="indefinite" />
                         </circle>
                       )}
@@ -155,8 +155,8 @@ export const InteractiveResearchVisual: React.FC = () => {
                         cx={x}
                         cy={y}
                         r="22"
-                        fill={isSelected ? '#0e7490' : '#0f172a'}
-                        stroke={isSelected ? '#22d3ee' : '#334155'}
+                        fill={isSelected ? '#1d4ed8' : '#0f172a'}
+                        stroke={isSelected ? '#60a5fa' : '#334155'}
                         strokeWidth={isSelected ? '2' : '1.5'}
                       />
 
@@ -170,7 +170,7 @@ export const InteractiveResearchVisual: React.FC = () => {
                         x={x}
                         y={y + (y > center.y ? 36 : -28)}
                         textAnchor="middle"
-                        fill={isSelected ? '#38bdf8' : '#cbd5e1'}
+                        fill={isSelected ? '#60a5fa' : '#cbd5e1'}
                         fontFamily="sans-serif"
                         fontSize="9"
                         fontWeight={isSelected ? 'bold' : 'normal'}
@@ -189,11 +189,11 @@ export const InteractiveResearchVisual: React.FC = () => {
             <div className="p-6 rounded-2xl bg-slate-900/80 border border-lab-border shadow-xl backdrop-blur-md">
               <div className="flex items-center justify-between pb-4 border-b border-lab-border">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
                     {getDomainIcon(selectedDomain.icon)}
                   </div>
                   <div>
-                    <div className="text-[11px] font-mono text-cyan-400">DOMAIN {selectedDomain.number}</div>
+                    <div className="text-[11px] font-mono text-blue-400">DOMAIN {selectedDomain.number}</div>
                     <h3 className="text-xl font-display font-bold text-white">{selectedDomain.name}</h3>
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export const InteractiveResearchVisual: React.FC = () => {
                   {selectedDomain.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-cyan-300 border border-lab-border"
+                      className="px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800/80 text-blue-300 border border-lab-border"
                     >
                       {tech}
                     </span>
@@ -231,17 +231,17 @@ export const InteractiveResearchVisual: React.FC = () => {
                       <a
                         key={proj.id}
                         href={`#/projects/${proj.slug}`}
-                        className="p-3 rounded-lg bg-slate-800/40 hover:bg-slate-800 border border-lab-border hover:border-cyan-500/50 transition-all flex items-start justify-between gap-3 group"
+                        className="p-3 rounded-lg bg-slate-800/40 hover:bg-slate-800 border border-lab-border hover:border-blue-500/50 transition-all flex items-start justify-between gap-3 group"
                       >
                         <div>
-                          <div className="text-xs font-bold text-slate-200 group-hover:text-cyan-400 transition-colors">
+                          <div className="text-xs font-bold text-slate-200 group-hover:text-blue-400 transition-colors">
                             {proj.title}
                           </div>
                           <p className="text-[11px] text-slate-400 line-clamp-1 mt-0.5">
                             {proj.shortDescription}
                           </p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-cyan-400 shrink-0 transition-transform group-hover:translate-x-1 mt-0.5" />
+                        <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-blue-400 shrink-0 transition-transform group-hover:translate-x-1 mt-0.5" />
                       </a>
                     ))
                   ) : (

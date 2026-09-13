@@ -47,7 +47,7 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column: Context & Direct Links */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-300 text-xs font-mono">
               <Sparkles className="w-3.5 h-3.5" />
               <span>ACADEMIC &amp; INDUSTRY DIALOGUE</span>
             </div>
@@ -68,7 +68,7 @@ export const ContactSection: React.FC = () => {
                 {collaborationAreas.map((area) => (
                   <span
                     key={area}
-                    className="px-3 py-1 rounded-lg text-xs font-mono bg-slate-900/80 text-cyan-300 border border-lab-border"
+                    className="px-3 py-1 rounded-lg text-xs font-mono bg-slate-900/80 text-blue-300 border border-lab-border"
                   >
                     {area}
                   </span>
@@ -81,14 +81,14 @@ export const ContactSection: React.FC = () => {
               {/* Email Pill */}
               <div className="p-4 rounded-xl bg-slate-900/70 border border-lab-border flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                  <div className="w-9 h-9 rounded-lg bg-blue-950/60 border border-blue-500/30 flex items-center justify-center text-blue-400">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="text-[11px] font-mono text-slate-400">DIRECT EMAIL</div>
                     <a
                       href={`mailto:${profile.email}`}
-                      className="text-sm font-semibold text-white hover:text-cyan-400 transition-colors"
+                      className="text-sm font-semibold text-white hover:text-blue-400 transition-colors"
                     >
                       {profile.email}
                     </a>
@@ -113,9 +113,9 @@ export const ContactSection: React.FC = () => {
                   href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-slate-900/70 border border-lab-border hover:border-cyan-500/40 flex items-center gap-2.5 text-xs text-slate-300 hover:text-cyan-400 transition-colors"
+                  className="p-3.5 rounded-xl bg-slate-900/70 border border-lab-border hover:border-blue-500/40 flex items-center gap-2.5 text-xs text-slate-300 hover:text-blue-400 transition-colors"
                 >
-                  <LinkedinIcon className="w-4 h-4 text-cyan-400" />
+                  <LinkedinIcon className="w-4 h-4 text-blue-400" />
                   <span>LinkedIn Profile</span>
                 </a>
                 <a
@@ -152,7 +152,7 @@ export const ContactSection: React.FC = () => {
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="e.g. Research Collaboration on Document OCR / SemEval"
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-lab-border text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 font-mono text-xs"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-lab-border text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 font-mono text-xs"
                   />
                 </div>
 
@@ -166,13 +166,13 @@ export const ContactSection: React.FC = () => {
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
                     placeholder="Describe your research proposal, query, or collaboration scope..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-lab-border text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-xs leading-relaxed"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-lab-border text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-xs leading-relaxed"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Send Message to {profile.email}</span>

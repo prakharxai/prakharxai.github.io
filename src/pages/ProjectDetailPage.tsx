@@ -41,7 +41,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
         </p>
         <button
           onClick={onNavigateHome}
-          className="px-5 py-2.5 rounded-xl bg-cyan-600 text-white text-xs font-mono font-bold hover:bg-cyan-500"
+          className="px-5 py-2.5 rounded-xl bg-blue-600 text-white text-xs font-mono font-bold hover:bg-blue-500"
         >
           Return to Portfolio
         </button>
@@ -69,7 +69,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
         <div className="mb-8 flex items-center justify-between">
           <button
             onClick={onNavigateHome}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-lab-border text-xs font-mono text-slate-300 hover:text-white hover:border-cyan-500/40 transition-all"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-lab-border text-xs font-mono text-slate-300 hover:text-white hover:border-blue-500/40 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to All Projects</span>
@@ -78,14 +78,14 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
           <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
             <span>RESEARCH REPOSITORY</span>
             <span>/</span>
-            <span className="text-cyan-400">{project.category}</span>
+            <span className="text-blue-400">{project.category}</span>
           </div>
         </div>
 
         {/* Hero Header */}
         <div className="space-y-4 mb-10">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 rounded-md text-xs font-mono font-bold bg-cyan-950/80 text-cyan-300 border border-cyan-500/40">
+            <span className="px-3 py-1 rounded-md text-xs font-mono font-bold bg-blue-950/80 text-blue-300 border border-blue-500/40">
               {project.category}
             </span>
             <span className="px-3 py-1 rounded-md text-xs font-mono bg-slate-800 text-slate-300 border border-slate-700/60 flex items-center gap-1.5">
@@ -122,7 +122,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
         {/* Technical Architecture Diagram */}
         <div className="my-10 rounded-2xl bg-slate-950 border border-lab-border overflow-hidden shadow-2xl">
           <div className="p-4 bg-slate-900/90 border-b border-lab-border flex items-center justify-between text-xs font-mono">
-            <div className="flex items-center gap-2 text-cyan-400">
+            <div className="flex items-center gap-2 text-blue-400">
               <Workflow className="w-4 h-4" />
               <span>TECHNICAL ARCHITECTURE SPECIFICATION</span>
             </div>
@@ -153,7 +153,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
           {/* Research Approach */}
           <div className="p-7 rounded-2xl bg-slate-900/70 border border-lab-border space-y-3">
             <h2 className="text-lg font-display font-bold text-white flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              <span className="w-2 h-2 rounded-full bg-blue-400" />
               <span>Methodological Approach</span>
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -164,7 +164,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
 
         {/* Pipeline / Architectural Flow String */}
         <div className="p-6 rounded-2xl bg-slate-900/60 border border-lab-border my-8 space-y-3">
-          <div className="text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-2">
+          <div className="text-xs font-mono uppercase tracking-wider text-blue-400 flex items-center gap-2">
             <Cpu className="w-4 h-4" />
             <span>End-to-End Computational Pipeline</span>
           </div>
@@ -182,7 +182,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-cyan-300 border border-slate-700/60"
+                className="px-3 py-1.5 rounded-lg text-xs font-mono bg-slate-800 text-blue-300 border border-slate-700/60"
               >
                 {tech}
               </span>
@@ -200,42 +200,44 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
             <h3 className="text-base font-bold text-white">
               {relatedPub.title}
             </h3>
-            <p className="text-xs font-mono text-slate-400">
-              {relatedPub.venue} ({relatedPub.year})
-            </p>
-            <p className="text-xs text-slate-300 pt-1">
-              {relatedPub.abstract}
+            <p className="text-xs text-slate-300">
+              Published in <span className="text-indigo-400 font-semibold">{relatedPub.venue}</span> ({relatedPub.year})
             </p>
           </div>
         )}
 
-        {/* Repository & Source Availability */}
-        <div className="p-6 rounded-2xl bg-slate-900/40 border border-lab-border my-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Live Deployments & Reproducibility Links */}
+        <div className="p-6 rounded-2xl bg-slate-900/60 border border-lab-border my-8 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h3 className="text-sm font-semibold text-white">Repository &amp; Documentation</h3>
+            <h3 className="text-sm font-display font-bold text-white mb-1">
+              Source Code &amp; Academic Artifacts
+            </h3>
             <p className="text-xs text-slate-400">
-              {project.githubUrl
-                ? 'Code and documentation available on GitHub'
-                : 'Repository link and deployment endpoints can be updated in CMS'}
+              Verified code and replication assets grounded in official repository release.
             </p>
           </div>
-
-          <div className="flex gap-3">
-            {project.githubUrl ? (
+          <div className="flex flex-wrap gap-3">
+            {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-white border border-slate-700"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-mono text-white transition-all"
               >
                 <GithubIcon className="w-4 h-4" />
-                <span>View Repository</span>
+                <span>GitHub Repository</span>
               </a>
-            ) : (
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 text-xs font-mono text-slate-500 border border-slate-800">
-                <GithubIcon className="w-4 h-4" />
-                <span>GitHub (CMS Configurable)</span>
-              </span>
+            )}
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-mono font-bold text-white transition-all shadow-lg shadow-blue-500/20"
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>Live System Demo</span>
+              </a>
             )}
           </div>
         </div>
@@ -251,20 +253,20 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 <a
                   key={rp.id}
                   href={`#/projects/${rp.slug}`}
-                  className="p-5 rounded-xl bg-slate-900/70 border border-lab-border hover:border-cyan-500/40 transition-all group flex flex-col justify-between"
+                  className="p-5 rounded-xl bg-slate-900/70 border border-lab-border hover:border-blue-500/40 transition-all group flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[10px] font-mono text-cyan-400 mb-1 block">
+                    <span className="text-[10px] font-mono text-blue-400 mb-1 block">
                       {rp.category} • {rp.year}
                     </span>
-                    <h4 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors line-clamp-1 mb-2">
+                    <h4 className="text-sm font-bold text-white group-hover:text-blue-300 transition-colors line-clamp-1 mb-2">
                       {rp.title}
                     </h4>
                     <p className="text-xs text-slate-400 line-clamp-2">
                       {rp.shortDescription}
                     </p>
                   </div>
-                  <div className="pt-4 flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-cyan-400">
+                  <div className="pt-4 flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-blue-400">
                     <span>Inspect</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </div>

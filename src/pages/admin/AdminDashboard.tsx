@@ -25,6 +25,11 @@ import {
   CheckCircle2,
   AlertCircle,
   Eye,
+  Lock,
+  Unlock,
+  KeyRound,
+  LogOut,
+  ShieldCheck,
 } from 'lucide-react';
 
 interface AdminDashboardProps {
@@ -135,6 +140,103 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
     }
   };
 
+  // Master Authentication State (Password: sitaram123)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    return sessionStorage.getItem('prakhar_cms_auth') === 'authenticated';
+  });
+  const [passwordInput, setPasswordInput] = useState('');
+  const [authError, setAuthError] = useState(false);
+
+  const handleAuthSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passwordInput === 'sitaram123') {
+      sessionStorage.setItem('prakhar_cms_auth', 'authenticated');
+      setIsAuthenticated(true);
+      setAuthError(false);
+      setPasswordInput('');
+      notify('Authentication successful. Welcome to CMS Admin Console.');
+    } else {
+      setAuthError(true);
+      setPasswordInput('');
+    }
+  };
+
+  const handleSignOut = () => {
+    sessionStorage.removeItem('prakhar_cms_auth');
+    setIsAuthenticated(false);
+    onExitAdmin();
+  };
+
+  // Render Security Lock Screen if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-lab-bg flex items-center justify-center p-4 relative overflow-hidden bg-radial-hero">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
+
+        <div className="relative z-10 max-w-md w-full p-8 rounded-3xl bg-slate-900/90 border border-lab-border shadow-2xl backdrop-blur-xl space-y-6">
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 mx-auto rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-lg shadow-indigo-500/20">
+              <Lock className="w-7 h-7" />
+            </div>
+            <h2 className="text-2xl font-display font-bold text-white tracking-tight">
+              CMS Security Gate
+            </h2>
+            <p className="text-xs text-slate-400 font-mono">
+              Prakhar Joshi AI Lab · Administrative Console
+            </p>
+          </div>
+
+          {authError && (
+            <div className="p-3 rounded-xl bg-rose-950/70 border border-rose-500/40 text-rose-300 text-xs font-mono flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0" />
+              <span>Invalid master password. Access denied.</span>
+            </div>
+          )}
+
+          <form onSubmit={handleAuthSubmit} className="space-y-4">
+            <div>
+              <label className="block text-xs font-mono text-slate-300 mb-2">
+                Enter Master Password:
+              </label>
+              <div className="relative">
+                <KeyRound className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="password"
+                  required
+                  autoFocus
+                  value={passwordInput}
+                  onChange={(e) => {
+                    setPasswordInput(e.target.value);
+                    if (authError) setAuthError(false);
+                  }}
+                  placeholder="••••••••••••"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-lab-border text-sm text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 font-mono"
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-2.5 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:brightness-110 active:scale-98 transition-all flex items-center justify-center gap-2"
+            >
+              <Unlock className="w-4 h-4" />
+              <span>Unlock Admin Console</span>
+            </button>
+          </form>
+
+          <div className="pt-2 border-t border-slate-800 text-center">
+            <button
+              onClick={onExitAdmin}
+              className="text-xs font-mono text-slate-400 hover:text-white transition-colors"
+            >
+              ← Return to Portfolio Website
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-lab-bg text-slate-100 pt-20 pb-28 font-sans">
       {/* Top Admin Header */}
@@ -171,10 +273,18 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
             </button>
             <button
               onClick={onExitAdmin}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-xs font-mono font-bold text-white shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 border border-lab-border hover:text-white"
             >
               <Eye className="w-3.5 h-3.5" />
               <span>Preview Live Site</span>
+            </button>
+            <button
+              onClick={handleSignOut}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-950/60 hover:bg-rose-900/80 text-xs font-mono font-bold text-rose-300 border border-rose-500/30 transition-all"
+              title="Lock Admin Console and Clear Session"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span>Lock / Sign Out</span>
             </button>
           </div>
         </div>
@@ -201,7 +311,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                 onClick={() => setActiveTab(tab.id as TabType)}
                 className={`px-3 py-2 rounded-lg flex items-center gap-1.5 whitespace-nowrap transition-all ${
                   isActive
-                    ? 'bg-cyan-950 text-cyan-300 font-bold border border-cyan-500/40'
+                    ? 'bg-blue-950 text-blue-300 font-bold border border-blue-500/40'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                 }`}
               >
@@ -244,7 +354,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                 <div className="text-3xl font-display font-bold text-white mt-1">
                   {state.projects.length}
                 </div>
-                <div className="text-[11px] font-mono text-cyan-400 mt-1">
+                <div className="text-[11px] font-mono text-blue-400 mt-1">
                   {state.projects.filter((p) => p.featured).length} Featured
                 </div>
               </div>
@@ -278,9 +388,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
             </div>
 
             {/* Git Persistence Notice */}
-            <div className="p-6 rounded-2xl bg-slate-900/50 border border-cyan-500/30">
+            <div className="p-6 rounded-2xl bg-slate-900/50 border border-blue-500/30">
               <h3 className="text-sm font-bold text-white flex items-center gap-2 mb-2">
-                <GitBranch className="w-4 h-4 text-cyan-400" />
+                <GitBranch className="w-4 h-4 text-blue-400" />
                 <span>Git-Based Content Management Policy</span>
               </h3>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
@@ -288,7 +398,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
               </p>
               <button
                 onClick={() => setActiveTab('git-sync')}
-                className="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-xs font-mono text-white font-bold"
+                className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-mono text-white font-bold"
               >
                 Go to Git Sync &amp; Export
               </button>
@@ -326,7 +436,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                     order: state.projects.length + 1,
                   })
                 }
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-xs font-mono font-bold text-white"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-mono font-bold text-white"
               >
                 <Plus className="w-4 h-4" />
                 <span>Add Project</span>
@@ -345,7 +455,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                       <button
                         onClick={() => moveProject(idx, 'up')}
                         disabled={idx === 0}
-                        className="hover:text-cyan-400 disabled:opacity-20"
+                        className="hover:text-blue-400 disabled:opacity-20"
                         title="Move Up"
                       >
                         <ArrowUp className="w-3.5 h-3.5" />
@@ -353,7 +463,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                       <button
                         onClick={() => moveProject(idx, 'down')}
                         disabled={idx === state.projects.length - 1}
-                        className="hover:text-cyan-400 disabled:opacity-20"
+                        className="hover:text-blue-400 disabled:opacity-20"
                         title="Move Down"
                       >
                         <ArrowDown className="w-3.5 h-3.5" />
@@ -401,7 +511,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                     </button>
                     <button
                       onClick={() => setEditingProject({ ...proj })}
-                      className="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-cyan-400 border border-slate-700"
+                      className="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-blue-400 border border-slate-700"
                       title="Edit Project"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
@@ -603,7 +713,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                         setEditingProject(null);
                         notify(`Saved project ${editingProject.title}`);
                       }}
-                      className="px-5 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-mono font-bold flex items-center gap-1.5"
+                      className="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-bold flex items-center gap-1.5"
                     >
                       <Save className="w-4 h-4" />
                       <span>Save Project</span>
@@ -986,7 +1096,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
               <div className="flex justify-end pt-4">
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold flex items-center gap-2"
+                  className="px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold flex items-center gap-2"
                 >
                   <Save className="w-4 h-4" />
                   <span>Save Profile</span>
@@ -1011,7 +1121,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* Option A: Direct Commit via GitHub API */}
               <div className="lg:col-span-7 p-7 rounded-2xl bg-slate-900/80 border border-lab-border space-y-4">
-                <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold">
+                <div className="flex items-center gap-2 text-blue-400 font-mono text-xs font-bold">
                   <GitBranch className="w-4 h-4" />
                   <span>DIRECT GITHUB REPOSITORY COMMIT</span>
                 </div>
@@ -1079,7 +1189,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                   <button
                     type="submit"
                     disabled={isCommitting}
-                    className="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold flex items-center justify-center gap-2 hover:brightness-110 disabled:opacity-50"
+                    className="w-full py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white font-bold flex items-center justify-center gap-2 hover:brightness-110 disabled:opacity-50"
                   >
                     {isCommitting ? (
                       <span>Pushing commits to GitHub...</span>
@@ -1142,7 +1252,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                 <div key={exp.id} className="p-4 rounded-xl bg-slate-900/80 border border-lab-border">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-bold text-white">{exp.role}</h3>
-                    <span className="text-xs font-mono text-cyan-400">{exp.startDate} – {exp.endDate}</span>
+                    <span className="text-xs font-mono text-blue-400">{exp.startDate} – {exp.endDate}</span>
                   </div>
                   <p className="text-xs text-slate-400 mt-1">{exp.organization} · {exp.location}</p>
                 </div>
@@ -1159,7 +1269,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                 <div key={edu.id} className="p-4 rounded-xl bg-slate-900/80 border border-lab-border">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-bold text-white">{edu.degree}</h3>
-                    <span className="text-xs font-mono text-cyan-400">{edu.startYear} – {edu.endYear}</span>
+                    <span className="text-xs font-mono text-blue-400">{edu.startYear} – {edu.endYear}</span>
                   </div>
                   <p className="text-xs text-slate-400 mt-1">{edu.institution} · {edu.location}</p>
                 </div>
@@ -1242,7 +1352,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onExitAdmin }) =
                   contentService.updateSettings(state.settings);
                   notify('Settings saved');
                 }}
-                className="px-5 py-2 rounded-lg bg-cyan-600 text-white font-bold"
+                className="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold"
               >
                 Save Settings
               </button>

@@ -49,16 +49,20 @@ export const Navbar: React.FC<NavbarProps> = () => {
           {/* Logo & Identity */}
           <a
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 rounded-lg p-1"
           >
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-violet-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 group-hover:border-cyan-400 transition-colors">
-              <span className="font-display font-bold text-base tracking-wider">PJ</span>
+            <div className="relative w-9 h-9 rounded-lg overflow-hidden border border-indigo-500/40 shadow-sm shadow-indigo-500/20 group-hover:border-blue-400 transition-colors shrink-0">
+              <img
+                src="assets/prakhar-joshi.jpg"
+                alt="Prakhar Joshi"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
             <div>
               <div className="font-display font-bold text-white text-base tracking-tight flex items-center gap-2">
                 <span>{profile.name}</span>
-                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse mr-1" />
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-medium bg-blue-950/80 text-blue-300 border border-blue-500/30">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse mr-1" />
                   AI LAB
                 </span>
               </div>
@@ -69,12 +73,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-lab-border/70 backdrop-blur-sm">
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/80 p-1.5 rounded-full border border-lab-border backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all"
+                className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
               >
                 {link.label}
               </a>
@@ -97,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 border border-transparent hover:border-lab-border transition-all"
+              className="p-2 rounded-lg text-slate-400 hover:text-blue-400 hover:bg-slate-800/60 border border-transparent hover:border-lab-border transition-all"
               title="LinkedIn Profile"
               aria-label="LinkedIn Profile"
             >
@@ -113,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-sm shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:brightness-110 active:scale-95 transition-all"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 text-white shadow-sm shadow-blue-500/25 hover:shadow-blue-500/40 hover:brightness-110 active:scale-95 transition-all"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Let's Collaborate</span>
@@ -170,7 +174,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-slate-400 hover:text-cyan-400 bg-slate-800/50"
+                  className="p-2 rounded-lg text-slate-400 hover:text-blue-400 bg-slate-800/50"
                   aria-label="LinkedIn"
                 >
                   <LinkedinIcon className="w-4 h-4" />
@@ -179,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-cyan-600 text-white"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Let's Collaborate</span>

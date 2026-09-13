@@ -57,7 +57,7 @@ export const FeaturedProjects: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-300 text-xs font-mono mb-2">
               <Layers className="w-3.5 h-3.5" />
               <span>RESEARCH &amp; DEPLOYED SYSTEMS</span>
             </div>
@@ -81,7 +81,7 @@ export const FeaturedProjects: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search projects, technologies (e.g. YOLO, RAG, Surya, ResNet)..."
-                className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900/80 border border-lab-border text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all font-mono text-xs"
+                className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900/80 border border-lab-border text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-mono text-xs"
               />
               {searchQuery && (
                 <button
@@ -94,7 +94,7 @@ export const FeaturedProjects: React.FC = () => {
             </div>
 
             <div className="text-xs font-mono text-slate-400 text-right">
-              Showing <span className="text-cyan-400 font-bold">{filteredProjects.length}</span> of {allProjects.length} verified projects
+              Showing <span className="text-blue-400 font-bold">{filteredProjects.length}</span> of {allProjects.length} verified projects
             </div>
           </div>
 
@@ -108,7 +108,7 @@ export const FeaturedProjects: React.FC = () => {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all border ${
                     isSelected
-                      ? 'bg-cyan-500 text-slate-950 font-bold border-cyan-400 shadow-md shadow-cyan-500/20'
+                      ? 'bg-blue-600 text-white font-bold border-blue-500 shadow-md shadow-blue-500/20'
                       : 'bg-slate-900/60 text-slate-400 border-lab-border hover:text-white hover:border-slate-600'
                   }`}
                 >
@@ -125,7 +125,7 @@ export const FeaturedProjects: React.FC = () => {
             {filteredProjects.map((project: Project) => (
               <div
                 key={project.id}
-                className="rounded-2xl bg-slate-900/70 border border-lab-border hover:border-cyan-500/40 transition-all flex flex-col justify-between overflow-hidden group shadow-lg hover:shadow-cyan-950/20"
+                className="rounded-2xl bg-slate-900/70 border border-lab-border hover:border-blue-500/40 transition-all flex flex-col justify-between overflow-hidden group shadow-lg hover:shadow-blue-950/20"
               >
                 <div>
                   {/* Visual Architecture Preview */}
@@ -137,7 +137,7 @@ export const FeaturedProjects: React.FC = () => {
                       loading="lazy"
                     />
                     <div className="absolute top-3 left-3 flex gap-2">
-                      <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold bg-slate-950/85 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
+                      <span className="px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold bg-slate-950/85 text-blue-300 border border-blue-500/30 backdrop-blur-md">
                         {project.category}
                       </span>
                       {project.featured && (
@@ -157,7 +157,7 @@ export const FeaturedProjects: React.FC = () => {
 
                   {/* Body Content */}
                   <div className="p-6">
-                    <h3 className="text-lg font-display font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                    <h3 className="text-lg font-display font-bold text-white group-hover:text-blue-300 transition-colors mb-2">
                       {project.title}
                     </h3>
                     <p className="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-4">
@@ -195,7 +195,7 @@ export const FeaturedProjects: React.FC = () => {
                 <div className="p-6 pt-0 border-t border-lab-border/40 mt-4 flex items-center justify-between">
                   <a
                     href={`#/projects/${project.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors group/btn"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors group/btn"
                   >
                     <span>View Technical Architecture</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
@@ -225,7 +225,7 @@ export const FeaturedProjects: React.FC = () => {
                 setSelectedCategory('All');
                 setSearchQuery('');
               }}
-              className="mt-4 px-4 py-2 rounded-lg bg-cyan-600 text-white text-xs font-medium"
+              className="mt-4 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-medium"
             >
               Reset Filters
             </button>

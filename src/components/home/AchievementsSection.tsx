@@ -8,7 +8,7 @@ export const AchievementsSection: React.FC = () => {
 
   const getAchievementIcon = (title: string) => {
     if (title.includes('SemEval')) return <Trophy className="w-5 h-5 text-emerald-400" />;
-    if (title.includes('Hackathon')) return <Award className="w-5 h-5 text-cyan-400" />;
+    if (title.includes('Hackathon')) return <Award className="w-5 h-5 text-blue-400" />;
     if (title.includes('NCC')) return <Shield className="w-5 h-5 text-amber-400" />;
     return <HeartHandshake className="w-5 h-5 text-purple-400" />;
   };
@@ -91,7 +91,7 @@ export const AchievementsSection: React.FC = () => {
                 className="p-4 rounded-xl bg-slate-900/80 border border-lab-border flex items-center justify-between gap-4"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-blue-950/60 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
@@ -107,7 +107,7 @@ export const AchievementsSection: React.FC = () => {
                     href={cert.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-lg text-slate-400 hover:text-cyan-400 hover:bg-slate-800"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-blue-400 hover:bg-slate-800"
                     title="View Credential"
                   >
                     <ExternalLink className="w-4 h-4" />

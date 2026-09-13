@@ -114,7 +114,7 @@ export const ResearchPipeline: React.FC = () => {
     <section id="research-pipeline" className="py-20 bg-lab-bg border-b border-lab-border relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-2">
+          <h2 className="text-xs font-mono uppercase tracking-widest text-blue-400 mb-2">
             METHODOLOGICAL LIFECYCLE
           </h2>
           <p className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
@@ -136,12 +136,12 @@ export const ResearchPipeline: React.FC = () => {
                 onClick={() => setActiveStepIndex(idx)}
                 className={`p-3 rounded-xl flex flex-col items-center justify-center text-center transition-all border ${
                   isActive
-                    ? 'bg-cyan-950/80 border-cyan-400 text-cyan-300 shadow-lg shadow-cyan-500/20 scale-105 z-10'
+                    ? 'bg-blue-950/80 border-blue-400 text-blue-300 shadow-lg shadow-blue-500/20 scale-105 z-10'
                     : 'bg-slate-900/60 border-lab-border text-slate-400 hover:text-slate-200 hover:border-slate-600'
                 }`}
               >
                 <span className="text-[10px] font-mono opacity-60 mb-1">{step.stepNumber}</span>
-                <Icon className={`w-5 h-5 mb-1.5 ${isActive ? 'text-cyan-400' : 'text-slate-400'}`} />
+                <Icon className={`w-5 h-5 mb-1.5 ${isActive ? 'text-blue-400' : 'text-slate-400'}`} />
                 <span className="text-[11px] font-medium leading-tight line-clamp-1">{step.title}</span>
               </button>
             );
@@ -149,12 +149,12 @@ export const ResearchPipeline: React.FC = () => {
         </div>
 
         {/* Step Inspector Card */}
-        <div className="p-8 rounded-2xl bg-slate-900/70 border border-cyan-500/30 backdrop-blur-md relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="p-8 rounded-2xl bg-slate-900/70 border border-blue-500/30 backdrop-blur-md relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
             <div className="md:col-span-6 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-900/40 border border-cyan-500/40 text-cyan-300 text-xs font-mono">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-900/40 border border-blue-500/40 text-blue-300 text-xs font-mono">
                 <span>STAGE {activeStep.stepNumber} OF 09</span>
               </div>
               <h3 className="text-2xl font-display font-bold text-white">
@@ -167,7 +167,7 @@ export const ResearchPipeline: React.FC = () => {
 
             {/* Practical Implementation Example from Resume */}
             <div className="md:col-span-6 p-5 rounded-xl bg-slate-950/80 border border-lab-border space-y-3">
-              <div className="flex items-center justify-between text-xs font-mono text-cyan-400">
+              <div className="flex items-center justify-between text-xs font-mono text-blue-400">
                 <span>GROUNDED LABORATORY CASE:</span>
                 <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-[10px]">
                   VERIFIED EXAMPLE
@@ -194,7 +194,7 @@ export const ResearchPipeline: React.FC = () => {
                   <button
                     disabled={activeStepIndex === steps.length - 1}
                     onClick={() => setActiveStepIndex((prev) => Math.min(steps.length - 1, prev + 1))}
-                    className="px-3 py-1 rounded bg-cyan-600 text-xs text-white disabled:opacity-40 hover:bg-cyan-500 flex items-center gap-1"
+                    className="px-3 py-1 rounded bg-blue-600 text-xs text-white disabled:opacity-40 hover:bg-blue-500 flex items-center gap-1"
                   >
                     <span>Next</span>
                     <ArrowRight className="w-3 h-3" />

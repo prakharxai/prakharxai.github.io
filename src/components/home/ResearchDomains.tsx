@@ -20,11 +20,11 @@ export const ResearchDomains: React.FC = () => {
   const getDomainIcon = (iconName: string) => {
     switch (iconName) {
       case 'Eye':
-        return <Eye className="w-5 h-5 text-cyan-400" />;
+        return <Eye className="w-5 h-5 text-blue-400" />;
       case 'MessageSquareText':
         return <MessageSquareText className="w-5 h-5 text-indigo-400" />;
       case 'FileText':
-        return <FileText className="w-5 h-5 text-teal-400" />;
+        return <FileText className="w-5 h-5 text-sky-400" />;
       case 'Layers':
         return <Layers className="w-5 h-5 text-amber-400" />;
       case 'Network':
@@ -36,7 +36,7 @@ export const ResearchDomains: React.FC = () => {
       case 'Cpu':
         return <Cpu className="w-5 h-5 text-sky-400" />;
       default:
-        return <Sparkles className="w-5 h-5 text-cyan-400" />;
+        return <Sparkles className="w-5 h-5 text-blue-400" />;
     }
   };
 
@@ -45,7 +45,7 @@ export const ResearchDomains: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-300 text-xs font-mono mb-2">
               <span>SPECIALIZED INVESTIGATION AREAS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
@@ -66,21 +66,21 @@ export const ResearchDomains: React.FC = () => {
             return (
               <div
                 key={domain.id}
-                className="p-6 rounded-2xl bg-slate-900/70 border border-lab-border hover:border-cyan-500/50 transition-all flex flex-col justify-between group hover:shadow-xl hover:shadow-cyan-950/20"
+                className="p-6 rounded-2xl bg-slate-900/70 border border-lab-border hover:border-blue-500/50 transition-all flex flex-col justify-between group hover:shadow-xl hover:shadow-blue-950/20"
               >
                 <div>
                   {/* Top Bar: Icon + Number */}
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-10 h-10 rounded-xl bg-slate-800/90 border border-lab-border flex items-center justify-center group-hover:border-cyan-500/40 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-slate-800/90 border border-lab-border flex items-center justify-center group-hover:border-blue-500/40 transition-colors">
                       {getDomainIcon(domain.icon)}
                     </div>
-                    <span className="text-xs font-mono text-slate-500 group-hover:text-cyan-400 transition-colors">
+                    <span className="text-xs font-mono text-slate-500 group-hover:text-blue-400 transition-colors">
                       {domain.number}
                     </span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-lg font-display font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-lg font-display font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
                     {domain.name}
                   </h3>
                   <p className="text-xs text-slate-400 leading-relaxed mb-5">
@@ -115,10 +115,10 @@ export const ResearchDomains: React.FC = () => {
                       <a
                         key={proj.id}
                         href={`#/projects/${proj.slug}`}
-                        className="text-xs font-medium text-slate-300 hover:text-cyan-400 flex items-center justify-between group/link"
+                        className="text-xs font-medium text-slate-300 hover:text-blue-400 flex items-center justify-between group/link"
                       >
                         <span className="truncate pr-2">{proj.title}</span>
-                        <ArrowRight className="w-3 h-3 text-slate-600 group-hover/link:text-cyan-400 shrink-0 transition-transform group-hover/link:translate-x-0.5" />
+                        <ArrowRight className="w-3 h-3 text-slate-600 group-hover/link:text-blue-400 shrink-0 transition-transform group-hover/link:translate-x-0.5" />
                       </a>
                     ))}
                   </div>
