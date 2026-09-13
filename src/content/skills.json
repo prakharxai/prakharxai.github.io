@@ -1,0 +1,32 @@
+[
+  {
+    "id": "programming",
+    "name": "Programming",
+    "skills": ["Python"]
+  },
+  {
+    "id": "ai-ml",
+    "name": "AI & Machine Learning",
+    "skills": ["Transformers", "PyTorch", "TensorFlow", "YOLO", "LLMs", "OCR", "t-SNE", "PCA"]
+  },
+  {
+    "id": "cv-nlp",
+    "name": "Computer Vision & NLP",
+    "skills": ["OpenCV", "NLTK", "spaCy", "HuggingFace"]
+  },
+  {
+    "id": "web-tools",
+    "name": "Web & Engineering Tools",
+    "skills": ["Streamlit", "QT5", "Git", "Roboflow"]
+  },
+  {
+    "id": "databases",
+    "name": "Databases",
+    "skills": ["MySQL", "MongoDB"]
+  },
+  {
+    "id": "documentation",
+    "name": "Documentation & Design",
+    "skills": ["LaTeX", "Excalidraw"]
+  }
+]

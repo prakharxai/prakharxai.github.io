@@ -1,0 +1,34 @@
+[
+  {
+    "id": "semeval-2026",
+    "title": "SemEval 2026 — 3rd Rank (ACL)",
+    "year": "2026",
+    "organizationOrEvent": "SemEval 2026 / ACL",
+    "description": "Secured 3rd rank globally in the SemEval 2026 Narrative Similarity shared task by designing transformer-based models for deep semantic alignment.",
+    "badge": "Top 3 Global Rank"
+  },
+  {
+    "id": "icfai-hackathon-2024",
+    "title": "ICFAI Dehradun Hackathon",
+    "year": "2024",
+    "organizationOrEvent": "ICFAI Dehradun",
+    "description": "Presented an innovative medical waste management solution leveraging automated monitoring and classification.",
+    "badge": "Healthcare Innovation"
+  },
+  {
+    "id": "ncc-c-certificate",
+    "title": "NCC 'C' Certificate",
+    "year": "2022",
+    "organizationOrEvent": "National Cadet Corps (NCC)",
+    "description": "Demonstrated rigorous leadership, physical discipline, operational coordination, and team command.",
+    "badge": "Leadership & Discipline"
+  },
+  {
+    "id": "yoga-conference-2023",
+    "title": "International Yoga Conference",
+    "year": "2023",
+    "organizationOrEvent": "International Yoga Conference",
+    "description": "Volunteer coordinator; facilitated and organized dedicated ML/AI sessions focused on women's healthcare analytics.",
+    "badge": "Community & Healthcare"
+  }
+]

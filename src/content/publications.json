@@ -1,0 +1,52 @@
+[
+  {
+    "id": "semeval-2026-task4",
+    "title": "AI-Monitors at SemEval-2026 Task 4: A Hybrid Embedding and LLM Ensemble for Narrative Similarity",
+    "venue": "SemEval 2026",
+    "year": "2026",
+    "abstract": "Proposed a hybrid system combining embedding-based similarity and structured LLM prompting with complementarity-driven ensembling.",
+    "authors": ["Prakhar Joshi"],
+    "tags": ["SemEval 2026", "ACL", "Narrative Similarity", "LLMs", "Ensemble"],
+    "bibtex": "@inproceedings{joshi2026aimonitors,\n  title={AI-Monitors at SemEval-2026 Task 4: A Hybrid Embedding and LLM Ensemble for Narrative Similarity},\n  author={Joshi, Prakhar},\n  booktitle={Proceedings of the 20th International Workshop on Semantic Evaluation (SemEval-2026)},\n  year={2026}\n}"
+  },
+  {
+    "id": "coling-2025-genai-detection",
+    "title": "Fast and Scalable Machine-Generated Text Detection",
+    "venue": "COLING 2025",
+    "year": "2025",
+    "abstract": "Built a multilingual detection system for GenAI text; improved F1 via optimization of training parameters.",
+    "authors": ["Prakhar Joshi"],
+    "tags": ["COLING 2025", "GenAI Detection", "Multilingual Transformers", "RoBERTa", "XLM-R"],
+    "bibtex": "@inproceedings{joshi2025fastscalable,\n  title={Fast and Scalable Machine-Generated Text Detection},\n  author={Joshi, Prakhar},\n  booktitle={Proceedings of the 31st International Conference on Computational Linguistics (COLING 2025)},\n  year={2025}\n}"
+  },
+  {
+    "id": "aihw-2025-depression-detection",
+    "title": "Explainable AI for Depression Detection",
+    "venue": "AIHW 2025",
+    "year": "2025",
+    "abstract": "Used BERT and SHAP for interpretable mental health classification from social media text.",
+    "authors": ["Prakhar Joshi"],
+    "tags": ["AIHW 2025", "Explainable AI", "BERT", "SHAP", "Mental Health"],
+    "bibtex": "@inproceedings{joshi2025explainableai,\n  title={Explainable AI for Depression Detection},\n  author={Joshi, Prakhar},\n  booktitle={AI in Healthcare and Wellbeing (AIHW 2025)},\n  year={2025}\n}"
+  },
+  {
+    "id": "icitsif-2026-precision-agriculture",
+    "title": "Advancement of AI Tools in Precision Agriculture: Managing Logistics for Sustainable Agribusinesses",
+    "venue": "ICITSIF 2026, IEEE",
+    "year": "2026",
+    "abstract": "Presented a framework leveraging AI-driven analytics and intelligent logistics for improving efficiency, sustainability, and decision-making in agricultural supply chains.",
+    "authors": ["Prakhar Joshi"],
+    "tags": ["ICITSIF 2026", "IEEE", "Precision Agriculture", "Logistics", "Applied AI"],
+    "bibtex": "@inproceedings{joshi2026precisionag,\n  title={Advancement of AI Tools in Precision Agriculture: Managing Logistics for Sustainable Agribusinesses},\n  author={Joshi, Prakhar},\n  booktitle={International Conference on Information Technologies, Systems and Information Flows (ICITSIF 2026)},\n  publisher={IEEE},\n  year={2026}\n}"
+  },
+  {
+    "id": "seed-information-digital-governance",
+    "title": "On Developing Seed Information System-Guided Digital Governance Framework: Managing Seed Supply Chains in Marginalised Farming Ecosystems",
+    "venue": "Digital Governance & Supply Chain Research",
+    "year": "2026",
+    "abstract": "Proposed a digital governance framework for seed supply-chain management, integrating information systems, traceability, and data-driven decision support for marginalized farming communities.",
+    "authors": ["Prakhar Joshi"],
+    "tags": ["Digital Governance", "Supply Chain", "Information Systems", "Traceability"],
+    "bibtex": "@article{joshi2026seedinfo,\n  title={On Developing Seed Information System-Guided Digital Governance Framework: Managing Seed Supply Chains in Marginalised Farming Ecosystems},\n  author={Joshi, Prakhar},\n  year={2026}\n}"
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "mca-data-science",
+    "degree": "Master of Computer Applications (Data Science)",
+    "institution": "Dev Sanskriti Vishwavidyalaya",
+    "location": "Haridwar, India",
+    "startYear": "2023",
+    "endYear": "2025",
+    "coursework": [
+      "Machine Learning",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Big Data Analytics"
+    ]
+  },
+  {
+    "id": "bsc-computer-science",
+    "degree": "Bachelor of Computer Science",
+    "institution": "Dev Sanskriti Vishwavidyalaya",
+    "location": "Haridwar, India",
+    "startYear": "2019",
+    "endYear": "2022",
+    "coursework": [
+      "Algorithms",
+      "Database Management Systems (DBMS)",
+      "Software Engineering"
+    ]
+  },
+  {
+    "id": "senior-secondary",
+    "degree": "Senior Secondary (Science — PCM + Computer Science)",
+    "institution": "Beersheba Senior Secondary School",
+    "location": "Almora, India",
+    "startYear": "2018",
+    "endYear": "2019",
+    "coursework": [
+      "Physics",
+      "Chemistry",
+      "Mathematics",
+      "Computer Science"
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "computer-vision",
+    "number": "01",
+    "name": "Computer Vision",
+    "shortDescription": "Designing vision architectures for face recognition, monocular depth estimation, and real-time detection pipelines.",
+    "technologies": ["OpenCV", "ResNet", "GhostFaceNet", "FaceNet", "YOLOv8", "Roboflow"],
+    "icon": "Eye",
+    "relatedProjectIds": ["mass-attendance-system", "depth-estimation-system", "wildfire-detection"]
+  },
+  {
+    "id": "nlp",
+    "number": "02",
+    "name": "Natural Language Processing",
+    "shortDescription": "Transformer-based cross-text narrative understanding, semantic alignment, and machine-generated text detection.",
+    "technologies": ["Transformers", "RoBERTa", "XLM-R", "BERT", "NLTK", "spaCy", "HuggingFace"],
+    "icon": "MessageSquareText",
+    "relatedProjectIds": ["semeval-2026-narrative-similarity", "coling-2025-ai-generated-detection", "journey-tracker-historical-books"]
+  },
+  {
+    "id": "ocr-document-intelligence",
+    "number": "03",
+    "name": "OCR & Document Intelligence",
+    "shortDescription": "End-to-end OCR pipelines for noisy medical scans, degraded historical manuscripts, and mathematical formula conversion.",
+    "technologies": ["Surya OCR", "NOUGAT OCR", "Preprocessing", "Layout Analysis", "Post-processing", "LaTeX / MathML"],
+    "icon": "FileText",
+    "relatedProjectIds": ["hospital-document-ocr", "ocr-pipeline-historical-books", "multilingual-ocr", "mathematical-formula-extraction"]
+  },
+  {
+    "id": "rag-grounded-ai",
+    "number": "04",
+    "name": "Retrieval-Augmented Generation",
+    "shortDescription": "Advanced RAG frameworks featuring verifiable grounded citations, passage attribution, and hallucination reduction.",
+    "technologies": ["LLMs", "Vector Embeddings", "Citation Grounding", "Passage Attribution", "Semantic Search"],
+    "icon": "Layers",
+    "relatedProjectIds": ["grounded-citation-rag-system"]
+  },
+  {
+    "id": "knowledge-graphs",
+    "number": "05",
+    "name": "Knowledge Graphs",
+    "shortDescription": "Semantic graph structures linking entities, events, places, and historical lineages for intelligent search and discovery.",
+    "technologies": ["Graph Modeling", "Entity Linking", "Semantic Lineage", "NLP Embeddings"],
+    "icon": "Network",
+    "relatedProjectIds": ["knowledge-graph-historical-books", "journey-tracker-historical-books"]
+  },
+  {
+    "id": "multilingual-ai",
+    "number": "06",
+    "name": "Multilingual AI",
+    "shortDescription": "Cross-lingual representations, script-aware text normalization, and OCR across Sanskrit, Hindi, and English.",
+    "technologies": ["XLM-R", "Surya OCR", "Script Normalization", "Cross-lingual Embeddings"],
+    "icon": "Languages",
+    "relatedProjectIds": ["multilingual-ocr", "coling-2025-ai-generated-detection", "knowledge-graph-historical-books"]
+  },
+  {
+    "id": "healthcare-ai",
+    "number": "07",
+    "name": "Healthcare AI",
+    "shortDescription": "Translating AI research to clinical workflows: hospital document processing, medical record parsing, and explainable diagnostics.",
+    "technologies": ["Document Layout Analysis", "BERT", "SHAP", "Medical Record Processing"],
+    "icon": "HeartPulse",
+    "relatedProjectIds": ["hospital-document-ocr"]
+  },
+  {
+    "id": "deep-learning-transformers",
+    "number": "08",
+    "name": "Deep Learning & Transformers",
+    "shortDescription": "Core neural architectures, feature embedding spaces, dimensionality reduction, and model parameter optimization.",
+    "technologies": ["PyTorch", "TensorFlow", "Transformers", "t-SNE", "PCA", "L2 Normalization"],
+    "icon": "Cpu",
+    "relatedProjectIds": ["semeval-2026-narrative-similarity", "mass-attendance-system", "depth-estimation-system"]
+  }
+]

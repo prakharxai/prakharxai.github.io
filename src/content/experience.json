@@ -1,0 +1,44 @@
+[
+  {
+    "id": "srhu-jrf",
+    "role": "Junior Research Fellow (JRF)",
+    "organization": "Swami Rama Himalayan University",
+    "location": "Dehradun, India",
+    "startDate": "March 2026",
+    "endDate": "Present",
+    "current": true,
+    "responsibilities": [
+      "Conducting research in Computer Vision, NLP, and applied AI systems with a focus on real-world healthcare and academic applications.",
+      "Developing and optimizing AI-driven pipelines for document processing, medical data analysis, and intelligent systems.",
+      "Collaborating with multidisciplinary teams to translate research into deployable solutions."
+    ]
+  },
+  {
+    "id": "cair-jrf",
+    "role": "Junior Research Fellow (JRF)",
+    "organization": "Center of Artificial Intelligence and Research (CAIR)",
+    "location": "Haridwar, India",
+    "startDate": "June 2025",
+    "endDate": "February 2026",
+    "current": false,
+    "responsibilities": [
+      "Conducting advanced R&D in Computer Vision, NLP, and graph-based AI systems.",
+      "Supporting ongoing institutional AI deployments and contributing to new research directions.",
+      "Mentoring interns, preparing publications, and presenting research findings."
+    ]
+  },
+  {
+    "id": "cair-intern",
+    "role": "Research Intern",
+    "organization": "Center of Artificial Intelligence and Research (CAIR)",
+    "location": "Haridwar, India",
+    "startDate": "December 2024",
+    "endDate": "May 2025",
+    "current": false,
+    "responsibilities": [
+      "Built multiple end-to-end AI pipelines including OCR systems, face recognition frameworks, and document analysis tools.",
+      "Implemented real-world deployments such as automated attendance, document processing, and AI-based analytics.",
+      "Co-authored research papers submitted to national and international conferences."
+    ]
+  }
+]
