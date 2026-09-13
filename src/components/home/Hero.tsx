@@ -61,7 +61,7 @@ export const Hero: React.FC = () => {
     const labels = [
       { text: 'SemEval #3', color: '#10b981', type: 'model' },
       { text: 'RAG Citations', color: '#3b82f6', type: 'embedding' },
-      { text: 'Hospital OCR', color: '#06b6d4', type: 'ocr' },
+      { text: 'Hospital OCR', color: '#38bdf8', type: 'ocr' },
       { text: 'COLING 2025', color: '#8b5cf6', type: 'model' },
       { text: 'Knowledge Graph', color: '#a855f7', type: 'graph' },
       { text: 'GhostFaceNet', color: '#60a5fa', type: 'embedding' },
@@ -395,27 +395,27 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Hero Visual Container (Portrait & Interactive Topology) */}
-          <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
+          {/* Right Column: Hero Visual Container (Profile Card & Interactive Topology) */}
+          <div className="lg:col-span-5 relative w-full flex flex-col items-center">
             {/* View Switcher Controls */}
-            <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-900/90 border border-lab-border mb-4 backdrop-blur-md z-30">
+            <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-900/90 border border-lab-border mb-4 backdrop-blur-md shadow-lg z-20">
               <button
                 onClick={() => setActiveHeroView('portrait')}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
                   activeHeroView === 'portrait'
                     ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/30'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                 }`}
               >
                 <User className="w-3.5 h-3.5" />
-                <span>Researcher Portrait</span>
+                <span>Researcher Profile</span>
               </button>
               <button
                 onClick={() => setActiveHeroView('network')}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono transition-all ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
                   activeHeroView === 'network'
                     ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/30'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
                 }`}
               >
                 <Network className="w-3.5 h-3.5" />
@@ -423,75 +423,81 @@ export const Hero: React.FC = () => {
               </button>
             </div>
 
-            {/* Visual Box */}
-            <div className="relative w-full aspect-square max-w-[480px] rounded-3xl bg-gradient-to-b from-slate-900/95 to-slate-950/95 border border-lab-border p-4 shadow-2xl shadow-indigo-950/40 overflow-hidden group">
-              {/* Background Network Canvas */}
-              <canvas
-                ref={canvasRef}
-                className={`w-full h-full cursor-crosshair transition-opacity duration-500 ${
-                  activeHeroView === 'portrait' ? 'opacity-25 absolute inset-0 pointer-events-none' : 'opacity-100 relative z-20'
-                }`}
-              />
+            {/* View 1: Clean, Unobstructed Researcher Profile Card (Zero Overlap) */}
+            <div className={`w-full max-w-[400px] transition-all duration-300 ${activeHeroView === 'portrait' ? 'block' : 'hidden'}`}>
+              <div className="rounded-3xl bg-slate-900/90 border border-lab-border p-6 shadow-2xl shadow-indigo-950/40 backdrop-blur-xl">
+                {/* Photo Container: Pristine 3:4 Aspect Ratio, Clean Border, Zero Overlays */}
+                <div className="relative mx-auto w-full max-w-[320px] aspect-[3/4] rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-950">
+                  <img
+                    src="assets/prakhar-joshi.jpg"
+                    alt="Prakhar Joshi — AI Researcher"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
 
-              {/* Portrait View Overlay */}
-              {activeHeroView === 'portrait' && (
-                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-2 animate-in fade-in duration-300">
-                  {/* Outer Frame with Glowing Ring */}
-                  <div className="relative">
-                    {/* Atmospheric Glow */}
-                    <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/30 via-indigo-600/30 to-purple-600/30 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity" />
-                    
-                    {/* Photo Container */}
-                    <div className="relative w-52 h-64 sm:w-60 sm:h-72 rounded-2xl overflow-hidden border-2 border-indigo-500/50 shadow-2xl bg-slate-950">
-                      <img
-                        src="assets/prakhar-joshi.jpg"
-                        alt="Prakhar Joshi — AI Researcher"
-                        className="w-full h-full object-cover object-top filter contrast-[1.04] brightness-[0.98]"
-                      />
-                      {/* Subtle Bottom Vignette */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
-                      
-                      {/* Live Badge Inside Photo */}
-                      <div className="absolute bottom-2.5 left-2.5 right-2.5 px-2.5 py-1.5 rounded-lg bg-slate-900/90 border border-white/10 backdrop-blur-md flex items-center justify-between text-[11px] font-mono text-white">
-                        <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                          AI RESEARCHER
-                        </span>
-                        <span className="text-slate-400 text-[10px]">SRHU · DEHRADUN</span>
+                {/* Structured Metadata Below the Photo (NO OVERLAP) */}
+                <div className="mt-5 space-y-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h2 className="text-xl font-display font-bold text-white tracking-tight">
+                        Prakhar Joshi
+                      </h2>
+                      <p className="text-xs font-mono text-blue-400">
+                        Junior Research Fellow (JRF)
+                      </p>
+                      <p className="text-[11px] text-slate-400 mt-0.5">
+                        Swami Rama Himalayan University · Dehradun
+                      </p>
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                      AI RESEARCH
+                    </span>
+                  </div>
+
+                  {/* Verified Academic Badges (Cleanly Positioned Below) */}
+                  <div className="grid grid-cols-2 gap-2 pt-1">
+                    <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-center">
+                      <div className="text-[10px] font-mono text-slate-500 uppercase">Global Benchmark</div>
+                      <div className="text-xs font-mono font-bold text-emerald-400 mt-0.5 flex items-center gap-1.5">
+                        <Award className="w-3.5 h-3.5 shrink-0" />
+                        <span>SemEval '26 #3</span>
                       </div>
                     </div>
 
-                    {/* Floating SemEval Achievement Badge */}
-                    <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-slate-900/95 border border-emerald-500/50 text-emerald-300 text-[11px] font-mono font-bold shadow-lg flex items-center gap-1.5 backdrop-blur-md">
-                      <Award className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>SemEval '26 #3 Rank</span>
-                    </div>
-
-                    {/* Floating Paper Badge */}
-                    <div className="absolute -bottom-3 -left-3 px-3 py-1 rounded-full bg-slate-900/95 border border-blue-500/50 text-blue-300 text-[11px] font-mono font-bold shadow-lg flex items-center gap-1.5 backdrop-blur-md">
-                      <BookOpen className="w-3.5 h-3.5 text-blue-400" />
-                      <span>COLING 2025</span>
+                    <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-center">
+                      <div className="text-[10px] font-mono text-slate-500 uppercase">Peer-Reviewed</div>
+                      <div className="text-xs font-mono font-bold text-blue-300 mt-0.5 flex items-center gap-1.5">
+                        <BookOpen className="w-3.5 h-3.5 shrink-0 text-blue-400" />
+                        <span>COLING 2025</span>
+                      </div>
                     </div>
                   </div>
 
-                  <p className="text-xs font-mono text-slate-400 mt-5 text-center">
-                    "Bridging AI research and real-world clinical &amp; document deployment."
-                  </p>
+                  {/* Verified Specialization */}
+                  <div className="pt-2 border-t border-slate-800/80 text-xs font-mono text-slate-400 flex items-center justify-between">
+                    <span className="text-slate-500">Degree:</span>
+                    <span className="text-slate-200">MCA (Data Science)</span>
+                  </div>
                 </div>
-              )}
+              </div>
+            </div>
 
-              {/* Technical Labels for Network View */}
-              {activeHeroView === 'network' && (
-                <>
-                  <div className="absolute top-3 left-3 text-[10px] font-mono text-blue-400/90 flex items-center gap-1.5 z-20">
-                    <Network className="w-3.5 h-3.5" />
-                    <span>INTERACTIVE_RESEARCH_GRAPH</span>
-                  </div>
-                  <div className="absolute bottom-3 left-3 text-[10px] font-mono text-slate-400/80 z-20">
-                    CLICK &amp; HOVER NODES
-                  </div>
-                </>
-              )}
+            {/* View 2: Full-Box Interactive Research Topology Canvas */}
+            <div className={`w-full max-w-[460px] aspect-square transition-all duration-300 ${activeHeroView === 'network' ? 'block' : 'hidden'}`}>
+              <div className="relative w-full h-full rounded-3xl bg-slate-900/90 border border-lab-border p-4 shadow-2xl shadow-indigo-950/40 overflow-hidden group">
+                <canvas
+                  ref={canvasRef}
+                  className="w-full h-full cursor-crosshair relative z-20"
+                />
+                <div className="absolute top-3 left-3 text-[10px] font-mono text-blue-400/90 flex items-center gap-1.5 z-20">
+                  <Network className="w-3.5 h-3.5" />
+                  <span>INTERACTIVE_RESEARCH_GRAPH</span>
+                </div>
+                <div className="absolute bottom-3 left-3 text-[10px] font-mono text-slate-400/80 z-20">
+                  CLICK &amp; HOVER NODES
+                </div>
+              </div>
             </div>
           </div>
         </div>
