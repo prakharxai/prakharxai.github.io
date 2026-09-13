@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+    <rect width="800" height="450" rx="16" fill="#0d1424"/>
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.05"/>
+      </linearGradient>
+    </defs>
+    <rect x="2" y="2" width="796" height="446" rx="14" stroke="#1f293d" stroke-width="2"/>
+    <text x="40" y="50" fill="#38bdf8" font-family="monospace" font-size="14" font-weight="600">RESEARCH ARCHITECTURE // SEMEVAL-2026 TASK 4</text>
+    <text x="40" y="80" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="bold">Hybrid Embedding &amp; LLM Ensemble for Narrative Similarity</text>
+    
+    <!-- Input Box 1 -->
+    <rect x="50" y="140" width="160" height="80" rx="8" fill="#161f38" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="130" y="175" fill="#f8fafc" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle">Narrative A</text>
+    <text x="130" y="195" fill="#94a3b8" font-family="sans-serif" font-size="11" text-anchor="middle">Input Text Stream</text>
+    
+    <!-- Input Box 2 -->
+    <rect x="50" y="260" width="160" height="80" rx="8" fill="#161f38" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="130" y="295" fill="#f8fafc" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle">Narrative B</text>
+    <text x="130" y="315" fill="#94a3b8" font-family="sans-serif" font-size="11" text-anchor="middle">Target Comparison Text</text>
+    
+    <!-- Arrows to Middle -->
+    <path d="M210 180 L290 180" stroke="#06b6d4" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M210 300 L290 300" stroke="#06b6d4" stroke-width="2"/>
+    <path d="M210 180 L290 240" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <path d="M210 300 L290 240" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+    <!-- Dual Pipeline -->
+    <rect x="290" y="130" width="220" height="100" rx="8" fill="#111c33" stroke="#06b6d4" stroke-width="1.5"/>
+    <text x="400" y="165" fill="#38bdf8" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Dense Transformer Embedding</text>
+    <text x="400" y="185" fill="#cbd5e1" font-family="sans-serif" font-size="11" text-anchor="middle">Cross-Text Semantic Mapping</text>
+    <text x="400" y="205" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="middle">Cosine &amp; Topological Similarity</text>
+
+    <rect x="290" y="250" width="220" height="100" rx="8" fill="#111c33" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="400" y="285" fill="#a78bfa" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Structured LLM Prompting</text>
+    <text x="400" y="305" fill="#cbd5e1" font-family="sans-serif" font-size="11" text-anchor="middle">Thematic &amp; Temporal Nuance</text>
+    <text x="400" y="325" fill="#94a3b8" font-family="monospace" font-size="10" text-anchor="middle">Zero-shot / Few-shot Reasoning</text>
+
+    <!-- Complementarity Ensemble -->
+    <path d="M510 180 L570 240" stroke="#06b6d4" stroke-width="2"/>
+    <path d="M510 300 L570 240" stroke="#8b5cf6" stroke-width="2"/>
+
+    <rect x="570" y="190" width="180" height="100" rx="10" fill="#162238" stroke="#10b981" stroke-width="2"/>
+    <text x="660" y="225" fill="#34d399" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Ensemble Engine</text>
+    <text x="660" y="245" fill="#ffffff" font-family="sans-serif" font-size="11" text-anchor="middle">Complementarity Fusion</text>
+    <rect x="595" y="260" width="130" height="20" rx="4" fill="#064e3b"/>
+    <text x="660" y="274" fill="#6ee7b7" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">RANK 3 (GLOBAL)</text>
+
+    <!-- Metric Badge -->
+    <circle cx="740" cy="50" r="22" fill="#065f46" stroke="#10b981" stroke-width="2"/>
+    <text x="740" y="55" fill="#a7f3d0" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">#3</text>
+  </svg>
