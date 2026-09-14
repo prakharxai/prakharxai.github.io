@@ -5,8 +5,9 @@ import { HomePage } from './pages/HomePage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 import { contentService } from './services/contentService';
+import { ThemeProvider } from './context/ThemeContext';
 
-export const App: React.FC = () => {
+export const AppContent: React.FC = () => {
   const [currentHash, setCurrentHash] = useState<string>(window.location.hash || '');
   const [settings, setSettings] = useState(contentService.getSettings());
 
@@ -55,7 +56,7 @@ export const App: React.FC = () => {
   if (currentHash.startsWith('#/projects/')) {
     const slug = currentHash.replace('#/projects/', '').split('?')[0];
     return (
-      <div className="min-h-screen flex flex-col bg-lab-bg text-slate-100">
+      <div className="min-h-screen flex flex-col bg-lab-bg text-slate-900 dark:text-slate-100 transition-colors duration-200">
         <Navbar />
         <main className="flex-1">
           <ProjectDetailPage slug={slug} onNavigateHome={navigateToHome} />
@@ -67,11 +68,19 @@ export const App: React.FC = () => {
 
   // Route 3: Main Academic Portfolio Home
   return (
-    <div className="min-h-screen flex flex-col bg-lab-bg text-slate-100 selection:bg-blue-600/30 selection:text-blue-200">
+    <div className="min-h-screen flex flex-col bg-lab-bg text-slate-900 dark:text-slate-100 selection:bg-blue-600/30 selection:text-blue-700 dark:selection:text-blue-200 transition-colors duration-200">
       <Navbar />
       <HomePage />
       <Footer />
     </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 

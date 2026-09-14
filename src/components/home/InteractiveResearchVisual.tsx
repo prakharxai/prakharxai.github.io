@@ -83,8 +83,8 @@ export const InteractiveResearchVisual: React.FC = () => {
                 </defs>
 
                 {/* Concentric Guide Circles */}
-                <circle cx={center.x} cy={center.y} r={radius} stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4 4" fill="none" />
-                <circle cx={center.x} cy={center.y} r={radius * 0.55} stroke="#1e293b" stroke-width="1" stroke-dasharray="2 4" fill="none" opacity="0.4" />
+                <circle cx={center.x} cy={center.y} r={radius} className="stroke-slate-300 dark:stroke-slate-800" strokeWidth="1.5" strokeDasharray="4 4" fill="none" />
+                <circle cx={center.x} cy={center.y} r={radius * 0.55} className="stroke-slate-300 dark:stroke-slate-800" strokeWidth="1" strokeDasharray="2 4" fill="none" opacity="0.5" />
 
                 {/* Connection Lines from Center to each Domain */}
                 {domains.map((domain, index) => {
@@ -100,10 +100,9 @@ export const InteractiveResearchVisual: React.FC = () => {
                         y1={center.y}
                         x2={x}
                         y2={y}
-                        stroke={isSelected ? '#3b82f6' : '#334155'}
+                        className={isSelected ? 'stroke-blue-500' : 'stroke-slate-300 dark:stroke-slate-700'}
                         strokeWidth={isSelected ? '2.5' : '1.2'}
                         strokeDasharray={isSelected ? 'none' : '3 3'}
-                        className="transition-all duration-300"
                       />
                       {isSelected && (
                         <circle cx={(center.x + x) / 2} cy={(center.y + y) / 2} r="3" fill="#60a5fa" filter="url(#glow)">
@@ -116,17 +115,17 @@ export const InteractiveResearchVisual: React.FC = () => {
 
                 {/* Central Hub Node: PRAKHAR JOSHI */}
                 <g className="cursor-pointer" onClick={() => setSelectedDomainId(domains[0].id)}>
-                  <circle cx={center.x} cy={center.y} r="48" fill="#0b1320" stroke="#3b82f6" strokeWidth="2.5" />
+                  <circle cx={center.x} cy={center.y} r="48" className="fill-white dark:fill-[#0b1320] stroke-blue-500" strokeWidth="2.5" />
                   <circle cx={center.x} cy={center.y} r="56" stroke="#60a5fa" strokeWidth="1" strokeDasharray="4 4" opacity="0.5">
                     <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="20s" repeatCount="indefinite" />
                   </circle>
-                  <text x={center.x} y={center.y - 6} textAnchor="middle" fill="#ffffff" fontFamily="sans-serif" fontSize="11" fontWeight="bold" letterSpacing="0.05em">
+                  <text x={center.x} y={center.y - 6} textAnchor="middle" className="fill-slate-900 dark:fill-white font-sans text-[11px] font-bold" letterSpacing="0.05em">
                     PRAKHAR
                   </text>
-                  <text x={center.x} y={center.y + 10} textAnchor="middle" fill="#60a5fa" fontFamily="sans-serif" fontSize="10" fontWeight="bold">
+                  <text x={center.x} y={center.y + 10} textAnchor="middle" className="fill-blue-600 dark:fill-blue-400 font-sans text-[10px] font-bold">
                     JOSHI
                   </text>
-                  <text x={center.x} y={center.y + 24} textAnchor="middle" fill="#94a3b8" fontFamily="monospace" fontSize="8">
+                  <text x={center.x} y={center.y + 24} textAnchor="middle" className="fill-slate-500 dark:fill-slate-400 font-mono text-[8px]">
                     AI RESEARCH
                   </text>
                 </g>
@@ -155,13 +154,20 @@ export const InteractiveResearchVisual: React.FC = () => {
                         cx={x}
                         cy={y}
                         r="22"
-                        fill={isSelected ? '#1d4ed8' : '#0f172a'}
-                        stroke={isSelected ? '#60a5fa' : '#334155'}
+                        className={isSelected ? 'fill-blue-600 stroke-blue-400' : 'fill-slate-100 dark:fill-slate-900 stroke-slate-300 dark:stroke-slate-700'}
                         strokeWidth={isSelected ? '2' : '1.5'}
                       />
 
                       {/* Number indicator */}
-                      <text x={x} y={y + 4} textAnchor="middle" fill={isSelected ? '#ffffff' : '#94a3b8'} fontFamily="monospace" fontSize="10" fontWeight="bold">
+                      <text
+                        x={x}
+                        y={y + 4}
+                        textAnchor="middle"
+                        className={isSelected ? 'fill-white' : 'fill-slate-700 dark:fill-slate-400'}
+                        fontFamily="monospace"
+                        fontSize="10"
+                        fontWeight="bold"
+                      >
                         {domain.number}
                       </text>
 
@@ -170,10 +176,9 @@ export const InteractiveResearchVisual: React.FC = () => {
                         x={x}
                         y={y + (y > center.y ? 36 : -28)}
                         textAnchor="middle"
-                        fill={isSelected ? '#60a5fa' : '#cbd5e1'}
+                        className={isSelected ? 'fill-blue-600 dark:fill-blue-400 font-bold' : 'fill-slate-700 dark:fill-slate-300'}
                         fontFamily="sans-serif"
                         fontSize="9"
-                        fontWeight={isSelected ? 'bold' : 'normal'}
                       >
                         {domain.name}
                       </text>

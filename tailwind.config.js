@@ -9,12 +9,12 @@ export default {
     extend: {
       colors: {
         lab: {
-          bg: '#050811',
-          'bg-secondary': '#090e1d',
-          card: '#0d1424',
-          'card-glass': 'rgba(13, 20, 36, 0.8)',
-          border: 'rgba(255, 255, 255, 0.08)',
-          'border-light': 'rgba(255, 255, 255, 0.16)',
+          bg: 'rgb(var(--color-lab-bg) / <alpha-value>)',
+          'bg-secondary': 'rgb(var(--color-lab-bg-secondary) / <alpha-value>)',
+          card: 'rgb(var(--color-lab-card) / <alpha-value>)',
+          'card-glass': 'var(--color-lab-card-glass)',
+          border: 'var(--color-lab-border)',
+          'border-light': 'var(--color-lab-border-light)',
           accent: '#3b82f6',
           'accent-glow': 'rgba(59, 130, 246, 0.15)',
           indigo: '#6366f1',

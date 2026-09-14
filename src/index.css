@@ -4,7 +4,23 @@
 
 @layer base {
   :root {
+    color-scheme: light;
+    --color-lab-bg: 248 250 252; /* #f8fafc */
+    --color-lab-bg-secondary: 241 245 249; /* #f1f5f9 */
+    --color-lab-card: 255 255 255; /* #ffffff */
+    --color-lab-card-glass: rgba(255, 255, 255, 0.85);
+    --color-lab-border: rgba(15, 23, 42, 0.09);
+    --color-lab-border-light: rgba(15, 23, 42, 0.15);
+  }
+
+  .dark {
     color-scheme: dark;
+    --color-lab-bg: 5 8 17; /* #050811 */
+    --color-lab-bg-secondary: 9 14 29; /* #090e1d */
+    --color-lab-card: 13 20 36; /* #0d1424 */
+    --color-lab-card-glass: rgba(13, 20, 36, 0.8);
+    --color-lab-border: rgba(255, 255, 255, 0.08);
+    --color-lab-border-light: rgba(255, 255, 255, 0.16);
   }
   
   html {
@@ -12,9 +28,13 @@
   }
 
   body {
-    background-color: #050811;
-    color: #f8fafc;
+    background-color: rgb(var(--color-lab-bg));
+    color: #0f172a;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  .dark body {
+    color: #f8fafc;
   }
 
   /* Custom research scrollbar */
@@ -23,12 +43,15 @@
     height: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #050811;
+    background: rgb(var(--color-lab-bg));
   }
   ::-webkit-scrollbar-thumb {
-    background: #1a2234;
+    background: #cbd5e1;
     border-radius: 4px;
-    border: 2px solid #050811;
+    border: 2px solid rgb(var(--color-lab-bg));
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #1a2234;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #3b82f6;
@@ -39,11 +62,21 @@
   .bg-grid-pattern {
     background-size: 32px 32px;
     background-image: 
+      linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  }
+
+  .dark .bg-grid-pattern {
+    background-image: 
       linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   }
 
   .bg-radial-hero {
+    background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.09) 0%, rgba(59, 130, 246, 0.04) 40%, transparent 75%);
+  }
+
+  .dark .bg-radial-hero {
     background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.14) 0%, rgba(59, 130, 246, 0.06) 40%, transparent 75%);
   }
 
@@ -64,6 +97,117 @@
   
   .card-glow:hover::before {
     opacity: 1;
+  }
+}
+
+/* =========================================================
+   LIGHT THEME REFINEMENTS
+   Ensures cards, panels, inputs, and text look pristine
+   in light mode without disrupting explicit brand buttons.
+   ========================================================= */
+
+html:not(.dark) {
+  /* Surfaces & Cards */
+  .bg-slate-900,
+  .bg-slate-950,
+  [class*="bg-slate-900/"],
+  [class*="bg-slate-950/"] {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Elevated hover surfaces */
+  .bg-slate-800,
+  [class*="bg-slate-800/"] {
+    background-color: #f1f5f9;
+  }
+
+  /* Borders */
+  [class*="border-lab-border"],
+  .border-slate-800,
+  .border-slate-700 {
+    border-color: rgba(15, 23, 42, 0.09);
+  }
+
+  /* Headings & prominent text with text-white */
+  h1.text-white,
+  h2.text-white,
+  h3.text-white,
+  h4.text-white,
+  h5.text-white,
+  div.text-white:not([class*="bg-blue"]):not([class*="bg-indigo"]):not([class*="bg-gradient"]):not([class*="from-blue"]):not([class*="from-indigo"]):not([class*="bg-emerald"]):not([class*="bg-red"]):not(button):not(a.bg-gradient-to-r),
+  p.text-white:not([class*="bg-blue"]):not([class*="bg-indigo"]):not([class*="bg-gradient"]):not([class*="from-blue"]):not([class*="from-indigo"]):not([class*="bg-emerald"]):not([class*="bg-red"]) {
+    color: #0f172a;
+  }
+
+  /* Secondary & body typography */
+  .text-slate-100 {
+    color: #0f172a;
+  }
+
+  .text-slate-200 {
+    color: #1e293b;
+  }
+
+  .text-slate-300 {
+    color: #334155;
+  }
+
+  .text-slate-400 {
+    color: #64748b;
+  }
+
+  /* Form controls and inputs */
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  select {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  /* Badges with dark tints in dark mode */
+  .bg-blue-950\/60,
+  .bg-blue-950\/80,
+  .bg-blue-950\/70 {
+    background-color: #eff6ff !important;
+    color: #1d4ed8 !important;
+    border-color: #bfdbfe !important;
+  }
+
+  .bg-emerald-950\/60,
+  .bg-emerald-950\/80 {
+    background-color: #ecfdf5 !important;
+    color: #047857 !important;
+    border-color: #a7f3d0 !important;
+  }
+
+  .bg-indigo-950\/60,
+  .bg-indigo-950\/80 {
+    background-color: #eef2ff !important;
+    color: #4338ca !important;
+    border-color: #c7d2fe !important;
+  }
+
+  .bg-purple-950\/60,
+  .bg-purple-950\/80 {
+    background-color: #faf5ff !important;
+    color: #6b21a8 !important;
+    border-color: #e9d5ff !important;
+  }
+
+  /* Keep brand buttons with text-white intact */
+  a[class*="from-blue"],
+  button[class*="from-blue"],
+  a[class*="bg-blue-600"],
+  button[class*="bg-blue-600"] {
+    color: #ffffff !important;
   }
 }
 

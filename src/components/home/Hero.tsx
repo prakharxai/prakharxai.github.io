@@ -161,8 +161,11 @@ export const Hero: React.FC = () => {
           node.vy *= -1;
         }
 
+        const isDark = document.documentElement.classList.contains('dark');
         const pulse = (Math.sin(frame * 0.03 + i) + 1) / 2;
-        ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 + pulse * 0.2})`;
+        ctx.strokeStyle = isDark
+          ? `rgba(99, 102, 241, ${0.15 + pulse * 0.2})`
+          : `rgba(99, 102, 241, ${0.25 + pulse * 0.25})`;
         ctx.lineWidth = 1.2;
         ctx.beginPath();
         ctx.moveTo(centerNode.x, centerNode.y);
@@ -170,7 +173,7 @@ export const Hero: React.FC = () => {
         ctx.stroke();
 
         const nextNode = nodes[(i + 1) % nodes.length];
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
+        ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.04)' : 'rgba(15, 23, 42, 0.08)';
         ctx.lineWidth = 0.8;
         ctx.beginPath();
         ctx.moveTo(node.x, node.y);
@@ -182,7 +185,7 @@ export const Hero: React.FC = () => {
           const mdy = mouseY - node.y;
           const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
           if (mdist < 110) {
-            ctx.strokeStyle = 'rgba(59, 130, 246, 0.5)';
+            ctx.strokeStyle = isDark ? 'rgba(59, 130, 246, 0.5)' : 'rgba(37, 99, 235, 0.6)';
             ctx.beginPath();
             ctx.moveTo(mouseX, mouseY);
             ctx.lineTo(node.x, node.y);
@@ -201,12 +204,13 @@ export const Hero: React.FC = () => {
         ctx.stroke();
 
         ctx.font = '10px "JetBrains Mono", monospace';
-        ctx.fillStyle = '#cbd5e1';
+        ctx.fillStyle = isDark ? '#cbd5e1' : '#1e293b';
         ctx.textAlign = 'center';
         ctx.fillText(node.label, node.x, node.y - 12);
       });
 
       // Draw Center Hub
+      const isDark = document.documentElement.classList.contains('dark');
       const centerPulse = (Math.sin(frame * 0.04) + 1) / 2;
       const grad = ctx.createRadialGradient(
         centerNode.x,
@@ -217,7 +221,7 @@ export const Hero: React.FC = () => {
         32
       );
       grad.addColorStop(0, '#3b82f6');
-      grad.addColorStop(1, '#050811');
+      grad.addColorStop(1, isDark ? '#050811' : '#dbeafe');
 
       ctx.fillStyle = grad;
       ctx.beginPath();
@@ -268,44 +272,44 @@ export const Hero: React.FC = () => {
 
             {/* Main Heading */}
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight leading-[1.1]">
+              <h1 className="text-4xl sm:text-6xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
                 {profile.name}
               </h1>
-              <p className="text-xl sm:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">
+              <p className="text-xl sm:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400">
                 {profile.title}
               </p>
             </div>
 
             {/* Core Domain Pills */}
-            <div className="flex flex-wrap gap-2 pt-1 text-xs font-mono text-slate-300">
-              <span className="px-2.5 py-1 rounded-md bg-slate-900/80 border border-lab-border flex items-center gap-1.5">
-                <ScanLine className="w-3.5 h-3.5 text-blue-400" />
+            <div className="flex flex-wrap gap-2 pt-1 text-xs font-mono text-slate-600 dark:text-slate-300">
+              <span className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none flex items-center gap-1.5">
+                <ScanLine className="w-3.5 h-3.5 text-blue-500 dark:text-blue-400" />
                 Computer Vision
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-900/80 border border-lab-border flex items-center gap-1.5">
-                <Layers className="w-3.5 h-3.5 text-indigo-400" />
+              <span className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
                 NLP
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-900/80 border border-lab-border flex items-center gap-1.5">
-                <FileCode className="w-3.5 h-3.5 text-sky-400" />
+              <span className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none flex items-center gap-1.5">
+                <FileCode className="w-3.5 h-3.5 text-sky-500 dark:text-sky-400" />
                 OCR &amp; Doc Intelligence
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-900/80 border border-lab-border flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              <span className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
                 RAG
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-900/80 border border-lab-border flex items-center gap-1.5">
-                <Cpu className="w-3.5 h-3.5 text-purple-400" />
+              <span className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none flex items-center gap-1.5">
+                <Cpu className="w-3.5 h-3.5 text-purple-500 dark:text-purple-400" />
                 Deep Learning
               </span>
             </div>
 
             {/* Strict Resume-grounded Intro */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
+            <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl font-normal">
               "{profile.shortBio}"
             </p>
 
-            <p className="text-xs sm:text-sm font-mono text-slate-400 max-w-xl border-l-2 border-blue-500/60 pl-3">
+            <p className="text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-400 max-w-xl border-l-2 border-blue-500/60 pl-3">
               {profile.tagline}
             </p>
 
@@ -320,23 +324,23 @@ export const Hero: React.FC = () => {
               </a>
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-lab-border hover:border-slate-500 active:scale-95 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-white dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none active:scale-95 transition-all"
               >
-                <Layers className="w-4 h-4 text-blue-400" />
+                <Layers className="w-4 h-4 text-blue-500 dark:text-blue-400" />
                 <span>View Projects</span>
               </a>
               <a
                 href="#publications"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-lab-border hover:border-slate-500 active:scale-95 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-white dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none active:scale-95 transition-all"
               >
-                <BookOpen className="w-4 h-4 text-indigo-400" />
+                <BookOpen className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
                 <span>Publications</span>
               </a>
               <a
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-slate-950/90 hover:bg-slate-800 text-slate-300 border border-lab-border hover:text-white transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-white dark:bg-slate-950/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-300 border border-slate-200 dark:border-lab-border shadow-sm dark:shadow-none transition-all"
               >
                 <GithubIcon className="w-4 h-4" />
                 <span>GitHub</span>
@@ -406,13 +410,13 @@ export const Hero: React.FC = () => {
           {/* Right Column: Hero Visual Container (Profile Card & Interactive Topology) */}
           <div className="lg:col-span-5 relative w-full flex flex-col items-center">
             {/* View Switcher Controls */}
-            <div className="flex items-center gap-1 p-1 rounded-xl bg-slate-900/90 border border-lab-border mb-4 backdrop-blur-md shadow-lg z-20">
+            <div className="flex items-center gap-1 p-1 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-lab-border mb-4 backdrop-blur-md shadow-md z-20">
               <button
                 onClick={() => setActiveHeroView('portrait')}
                 className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
                   activeHeroView === 'portrait'
                     ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/30'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50'
                 }`}
               >
                 <User className="w-3.5 h-3.5" />
@@ -423,7 +427,7 @@ export const Hero: React.FC = () => {
                 className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all ${
                   activeHeroView === 'network'
                     ? 'bg-blue-600 text-white font-bold shadow-md shadow-blue-500/30'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50'
                 }`}
               >
                 <Network className="w-3.5 h-3.5" />
@@ -433,9 +437,9 @@ export const Hero: React.FC = () => {
 
             {/* View 1: Clean, Unobstructed Researcher Profile Card (Zero Overlap) */}
             <div className={`w-full max-w-[400px] transition-all duration-300 ${activeHeroView === 'portrait' ? 'block' : 'hidden'}`}>
-              <div className="rounded-3xl bg-slate-900/90 border border-lab-border p-6 shadow-2xl shadow-indigo-950/40 backdrop-blur-xl">
+              <div className="rounded-3xl bg-white/95 dark:bg-slate-900/90 border border-slate-200 dark:border-lab-border p-6 shadow-xl dark:shadow-2xl dark:shadow-indigo-950/40 backdrop-blur-xl">
                 {/* Photo Container: Pristine 3:4 Aspect Ratio, Clean Border, Zero Overlays */}
-                <div className="relative mx-auto w-full max-w-[320px] aspect-[3/4] rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-950">
+                <div className="relative mx-auto w-full max-w-[320px] aspect-[3/4] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/80 shadow-md bg-slate-100 dark:bg-slate-950">
                   <img
                     src="assets/prakhar-joshi.jpg"
                     alt="Prakhar Joshi — AI Researcher"
@@ -447,45 +451,45 @@ export const Hero: React.FC = () => {
                 <div className="mt-5 space-y-4">
                   <div className="flex items-start justify-between gap-3">
                     <div>
-                      <h2 className="text-xl font-display font-bold text-white tracking-tight">
+                      <h2 className="text-xl font-display font-bold text-slate-900 dark:text-white tracking-tight">
                         Prakhar Joshi
                       </h2>
-                      <p className="text-xs font-mono text-blue-400">
+                      <p className="text-xs font-mono text-blue-600 dark:text-blue-400">
                         Junior Research Fellow (JRF)
                       </p>
-                      <p className="text-[11px] text-slate-400 mt-0.5">
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
                         Swami Rama Himalayan University · Dehradun
                       </p>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/40 shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                       AI RESEARCH
                     </span>
                   </div>
 
                   {/* Verified Academic Badges (Cleanly Positioned Below) */}
                   <div className="grid grid-cols-2 gap-2 pt-1">
-                    <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-center">
+                    <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 flex flex-col justify-center">
                       <div className="text-[10px] font-mono text-slate-500 uppercase">Global Benchmark</div>
-                      <div className="text-xs font-mono font-bold text-emerald-400 mt-0.5 flex items-center gap-1.5">
+                      <div className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 mt-0.5 flex items-center gap-1.5">
                         <Award className="w-3.5 h-3.5 shrink-0" />
                         <span>SemEval '26 #3</span>
                       </div>
                     </div>
 
-                    <div className="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800 flex flex-col justify-center">
+                    <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 flex flex-col justify-center">
                       <div className="text-[10px] font-mono text-slate-500 uppercase">Peer-Reviewed</div>
-                      <div className="text-xs font-mono font-bold text-blue-300 mt-0.5 flex items-center gap-1.5">
-                        <BookOpen className="w-3.5 h-3.5 shrink-0 text-blue-400" />
+                      <div className="text-xs font-mono font-bold text-blue-600 dark:text-blue-300 mt-0.5 flex items-center gap-1.5">
+                        <BookOpen className="w-3.5 h-3.5 shrink-0 text-blue-500 dark:text-blue-400" />
                         <span>COLING 2025</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Verified Specialization */}
-                  <div className="pt-2 border-t border-slate-800/80 text-xs font-mono text-slate-400 flex items-center justify-between">
+                  <div className="pt-2 border-t border-slate-200 dark:border-slate-800/80 text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center justify-between">
                     <span className="text-slate-500">Degree:</span>
-                    <span className="text-slate-200">MCA (Data Science)</span>
+                    <span className="text-slate-800 dark:text-slate-200">MCA (Data Science)</span>
                   </div>
                 </div>
               </div>
@@ -493,7 +497,7 @@ export const Hero: React.FC = () => {
 
             {/* View 2: Full-Box Interactive Research Topology Canvas */}
             <div className={`w-full max-w-[460px] aspect-square transition-all duration-300 ${activeHeroView === 'network' ? 'block' : 'hidden'}`}>
-              <div className="relative w-full h-full rounded-3xl bg-slate-900/90 border border-lab-border p-4 shadow-2xl shadow-indigo-950/40 overflow-hidden group">
+              <div className="relative w-full h-full rounded-3xl bg-white/95 dark:bg-slate-900/90 border border-slate-200 dark:border-lab-border p-4 shadow-xl dark:shadow-2xl dark:shadow-indigo-950/40 overflow-hidden group">
                 <canvas
                   ref={canvasRef}
                   className="w-full h-full cursor-crosshair relative z-20"
